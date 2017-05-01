@@ -1,0 +1,447 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="Tue, 01 Jan 1980 1:00:00 GMT">
+<title>Create your own Map</title>
+</head>
+<body bgcolor = "gray" link = "blue" alink = "red" vlink = "red">
+
+
+<SCRIPT LANGUAGE = "JavaScript">
+<!--
+
+function newMapIsChanged () {
+ // returns false if unchanged; returns true if changed.
+    return (document.nameForm.changed.value=="1");
+}
+function newMapChanged () {
+// this hidden field in nameForm used as a global variable.
+    document.nameForm.changed.value = "1";
+}
+
+function newMapUnchanged() {
+    document.nameForm.changed.value = "0";
+}
+
+function setCookie (name) {
+
+       document.cookie = "Mat_"+name + "=" + document.newMap.atvol.value + "|" + document.newMap.burgvec.value + "|" +  document.newMap.meltemp.value + "|" + document.newMap.shemod.value + "|" + document.newMap.tempdep.value + "|" + document.newMap.preexv.value + "|" + document.newMap.actenv.value + "|" + document.newMap.preexb.value + "|" + document.newMap.actenb.value + "|" + document.newMap.preexc.value + "|" + document.newMap.actenc.value + "|" + document.newMap.expn.value + "|" + document.newMap.dorna.value + "|" + document.newMap.pl.value + "|" + document.newMap.flowstr.value + "|" + document.newMap.preexg.value + "|" + document.newMap.actenf.value + "|" + document.newMap.grain.value + "; expires=Mon, 01-Jan-2015 00:00:00 GMT; path=/;";
+}
+
+// getCookie function taken from http://www.cookiecentral.com/faq/#5.2
+function getCookie(name) {
+         var cookie = " " + document.cookie;
+         var search = " " + name + "=";
+         var setStr = null;
+         var offset = 0;
+         var end = 0;
+         if (cookie.length > 0) {
+                 offset = cookie.indexOf(search);
+                 if (offset != -1) {
+                         offset += search.length;
+                         end = cookie.indexOf(";", offset)
+                         if (end == -1) {
+                                 end = cookie.length;
+                         }
+                         setStr = unescape(cookie.substring(offset, end));
+                 }
+         }
+	 return (setStr);
+}
+
+function Remover (myform)
+{
+    if (myform.selectedIndex > 3) {
+        var cookie = (document.cookie).split ("; ");
+	var user_materials = new Array();
+	var i=0;
+	for (var j=0; j<cookie.length; j=j+1) {
+	if (cookie[j].indexOf("Mat_") == 0) {
+	    user_materials[i]=cookie[j];
+            i=i+1;
+	}
+    }
+
+	// set mat to be the name of the material, from the cookie (if the cookie is "Mat_myMaterial = 0|2|...", mat becomes "myMaterial")
+	var mat = user_materials[myform.selectedIndex-3].substring(4, user_materials[myform.selectedIndex-3].indexOf("="));
+        if (confirm("Are you sure you want to delete " + mat + "?")) {
+            document.cookie = "Mat_" + mat + " = jibberish; expires=Mon, 01-Jan-1985 00:00:00 GMT; path=/;";
+            window.location.reload();
+        }
+    }
+    else if (myform.selectedIndex<=0) {
+        alert ("Cannot remove standard materials.");
+
+    }
+    else {
+        alert ("No material selected.")
+    }
+
+}
+
+
+
+function changeMetal(myform)
+{
+    newMapUnchanged();  // reset the changed boolean for newMap.
+    var element = new Array();
+    var cookie = (document.cookie).split ("; ");
+    var user_materials = new Array();
+    var i=0;
+    for (var j=0; j<cookie.length; j=j+1) {
+       if (cookie[j].indexOf("Mat_") == 0) {
+            user_materials[i]=cookie[j];
+            i=i+1;
+       }
+    }	     
+    var fields = (user_materials[myform.selectedIndex].substring(user_materials[myform.selectedIndex].indexOf("=")+1, user_materials[myform.selectedIndex].length)).split("|");
+    if (fields.length != 18) alert ("Not a properly saved metal file.");
+        else {
+	    element = fields;
+	    // put the name into element[18]
+            element[18] = user_materials[myform.selectedIndex].substring(4, user_materials[myform.selectedIndex].indexOf("="));
+	}
+
+    document.nameForm.name.value = element[18];
+    document.newMap.atvol.value = element[0];
+    document.newMap.burgvec.value = element[1];
+    document.newMap.meltemp.value = element[2];
+    document.newMap.shemod.value = element[3];
+    document.newMap.tempdep.value = element[4];
+    document.newMap.preexv.value = element[5];
+    document.newMap.actenv.value = element[6];
+    document.newMap.preexb.value = element[7];
+    document.newMap.actenb.value = element[8];
+    document.newMap.preexc.value = element[9];
+    document.newMap.actenc.value = element[10];
+    document.newMap.expn.value = element[11];
+    document.newMap.dorna.value = element[12];
+    document.newMap.pl.value = element[13];
+    document.newMap.flowstr.value = element[14];
+    document.newMap.preexg.value = element[15];
+    document.newMap.actenf.value = element[16];
+    document.newMap.grain.value = element[17];
+}
+// -->
+</script>
+
+<center>
+
+<!-Title. Same as first page->
+
+<table bgcolor="fffb0" cellpadding="3" cellspacing="0" border="1" bordercolor="black" width="100%">
+    
+    <tr align ="center"><td width = "100%"><font size = "80" color="Black">DEFORMATION-MECHANISM</font></td></tr>
+    <tr align ="center"><td width = "100%"><font size = "80" color="Black">MAPS</font></td></tr>
+    <tr align ="center"><td width = "100%"><font size = "5" color="Black">The Plasticity and Creep of Metals and Ceramics</font></td></tr>
+</table>
+
+<!-Main table. Has yellow background and bothe the links to other pages and the Symbol table->
+
+<table bgcolor = "ffff3" cellpadding = "0" cellspacing = "0" border = "1" width = "100%">
+<tr align = "center">
+<td>
+<br>
+
+<!-Links to other pages table->
+
+<table bgcolor="ffff3" cellpadding = "2" cellspacing = "0" border = "2" width ="80%">
+	    <tr align = "center">
+	    <td width = "25%"><a href="index.html"><strong>Home</strong></a></td>
+	    <td width = "25%"><strong>Text</strong></td>
+	    <td width = "25%"><a href="symbolRef.html"><strong>Symbol Reference</strong></a></td>
+	    <td width = "25%"><a href="interactive.html"><strong>Interactive Plots</strong></a></td>
+	    </tr>
+</table>
+<br>
+
+
+
+<SCRIPT src = "stdmaterials.js" language = "JavaScript">
+</SCRIPT>
+
+<SCRIPT language = "JavaScript">
+<!--
+function setacookie (cookname) {
+   document.cookie = cookname;
+}
+
+
+  document.write ('<form name = "selectMetal"> <table border = "0" bgcolor = "ffff3" width = "95%"> <tr align = "middle"><td align = "middle" width = "49%"><font size = "+1">Enter Data to Create a Map</font>');
+
+  document.write("<td align = middle width = 2%><font size = +1> &nbsp; or</font></td>");
+  document.write("<td align = middle width = 49%><font size = +1>Pick From Pre-Entered Data <br> </font>");
+   
+  if (getCookie("MStdMatDone")==null) {
+      std_materials = stdMaterials().substring(0,stdMaterials().length-1).split("; ");
+      //alert (std_materials);
+      var mat = new Array();
+      var cook = "";
+      for (j=0; j< std_materials.length; j=j+1) {
+         entry = std_materials[j].split(" ");
+         cook = "Mat_" + entry[0] + "=";
+	 for (var i=1; i<entry.length; i=i+1) {
+            cook = cook + entry[i];
+	    if (i!=entry.length-1)  // for all but the last interation
+	       cook = cook + "|";
+	 }
+         setacookie(cook+";");
+	 //alert ("getcookie: " + getCookie ("Mat_MoreAgain") + "at " + entry[0]);
+      }
+      //document.cookie = "StdMatDone=Alldone;";
+      //window.location.reload();
+  }
+
+  alert ("getcookie: " + getCookie ("Mat_Nickel"));
+  alert (document.cookie);
+  user_materialst = (document.cookie).split("; ");
+  //alert (user_materialst);
+  var user_materials = new Array();
+  i=0;
+  for (var j=0; j<user_materialst.length; j=j+1) {
+      if (user_materialst[j].indexOf("Mat_") == 0) {
+            user_materials[i]=user_materialst[j];
+            i=i+1;
+      }
+  }
+
+
+  document.write("<select onChange = \"changeMetal(this)\" name = \"elements\">");
+//  document.write("<option>Clear Form");
+//  document.write("<option value>Nickel");
+//  document.write("<option>Lead");
+//  document.write("<option>Silver");
+         
+      // Now put in user-defined materials
+	  for (i=1; i<user_materials.length; i=i+1) {
+	      document.write ("<option>" + user_materials[i].substring(4, user_materials[i].indexOf("=")));
+
+	  }
+     document.write("</select>");
+     document.write("<input type=\"button\" name = DeleteButton value = \"Delete this Material\" onClick = Remover(this)> </input>");
+
+     document.write("</td> </table>"); 
+
+   document.write ("</form>");
+
+// -->
+</SCRIPT>
+
+
+                                                      
+<META Without javascript, you must enter the values.>
+<NOSCRIPT>
+<form name = "selectMetal"> <table border = "0" bgcolor = "ffff3" width = "95%"> <tr align = "middle"><td align = "middle" width = "49%"><font size = "+1">Enter Data to Create a Map</font>
+<br><font>Enable JavaScript for more options</font>
+</td>
+</table>
+</form>
+</NOSCRIPT>
+
+
+
+
+<form name = "nameForm">
+<hr size = "1" width = "95%">
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><td align = "left" width = "35%"><font size = "+1"> <b> Material Name </b> </font> </td> <td width = "68%"> <input name = name type="text" value = ""> </th>
+</td>
+</tr>
+</table>
+<input type=hidden name="changed" value="0">  <META This field used as a global variable as to whether or not newMap has been changed.>
+</form>
+
+
+<form name = "newMap" method = "get" action="cgi/defMechInput.cgi">
+
+<hr size = "1" width = "95%"> 
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><td align = "left" width = "62%"><font size = "+1">Crystallographic and Thermal Data</font></td></th>
+<td width = "38%" align = middle>
+
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Atomic Volume, (m<sup>3</sup>)</b></td>
+    <td width = "28%"><input type = "text" name = "atvol" size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Burgers Vector, (m)</b></td>
+    <td width = "28%"><input type = "text"  name = "burgvec" size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Melting Temperature, (K)</b></td>
+    <td width = "28%"><input name = meltemp  size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Modulus</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Shear Modulus at 300K, (MN/m<sup>2</sup>)</b> </td>
+    <td><input name = shemod  size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Temperature Dependence of Modulus,</b></td>
+    <td><input name = tempdep  size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Lattice Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>2</sup>/s)</b></td>
+    <td><input name = preexv  size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenv  size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Boundary Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>3</sup>/s)</b></td>
+    <td><input name = preexb size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenb size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Core Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>4</sup>/s)</b></td>
+    <td><input name = preexc size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenc  size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Power-Law Creep</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Exponent, n</b></td>
+    <td><input name = expn size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Dorn Constant, A</b></td>
+    <td><input name = dorna size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>P-L Breakdown</b></td>
+    <td><input name = pl  size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Obstacle-Controlled Glide</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>0 K Flow Stress</b></td>
+    <td><input name = flowstr  size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (s<sup>-1</sup>)</b></td>
+    <td><input name = preexg size = "20" onChange=newMapChanged()></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy</b></td>
+    <td><input name = actenf size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+<br>
+
+<hr size = "1" width = "95%">
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Other Variables</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Grain Size</b></td>
+    <td><input name = grain size = "20" onChange=newMapChanged()></td>
+</tr>
+</table>
+<br>
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align= "left"> <th colspan = 3>
+<input type="button" value="Display Options" onclick=dispoptions()>
+</tr>
+</table>
+
+<font size = "+2">
+<input type="button" value ="Create Map" onclick=submiter() align = "middle">
+</form>
+</td></tr>
+</table>
+
+<SCRIPT language = "JavaScript">
+<!--
+
+function submiter()
+{
+    if (newMapIsChanged()) {
+
+        if ((document.nameForm.name.value=="Nickel") || (document.nameForm.name.value=="Silver") || (document.nameForm.name.value=="Lead")) {
+	    if (!confirm ("Cannot save over a standard material. Select OK to continue without remembering your changes, or cancel and make a new name for your material.")) {
+	        return;
+	    }
+	}
+
+        else {
+	    if (getCookie("Mat_"+document.nameForm.name.value)!=null) {
+	        if (!confirm ("Overwrite " + document.nameForm.name.value + " with your changes?")) {
+                    return;
+	        }
+	    }
+            setCookie (document.nameForm.name.value);
+	}
+    }
+    document.newMap.submit();
+}
+
+
+
+function dispoptions()
+{
+    window.open ("DisplayOptions.html", "", config="width=380,height=400,status,location");
+}
+// -->
+</SCRIPT>
+
+</body>
+</html>
+
+
+

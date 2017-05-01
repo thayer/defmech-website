@@ -1,0 +1,70 @@
+<html>
+<body>
+<h2> Default values currently shown. Modify them and click submit. </h2>
+<form name = "options" action="DispOptionsInpt.cgi">
+<table>
+<tr> <td width = "4%"> </td>
+     <td width = "34%"> </td>
+     <td align="middle"> <b> Min </b> </td>
+     <td align="middle"> <b> Max </b> </td>
+</tr>
+<tr> <td width = "4%"></td>
+     <td width = "30%"><b> X Axis (T/Tm)</b></td>
+     <td><input type="text" name ="XMin" size = "20" value="0"> </td>
+     <td><input name = XMax size = "20" value="1"> </td>
+</tr>
+<tr>
+<tr> <td width = "4%"></td>
+     <td width = "30%"><b> Y Axis </b></td>
+     <td><input type="text" name ="YMin" size = "20" value="10E-6"> </td>
+     <td><input name = YMax size = "20" value="10E-1"> </td>
+</tr>
+<tr>
+<tr> <td width = "4%"></td>
+     <td width = "30%"><b>Contours</b></td>
+     <td><input name = ContoursMin size = "20" value = "10E-20"> </td>
+     <td><input name = ContoursMax size = "20" value = "10E10"> </td>
+</tr>
+</table>
+<input type="button" value="Cancel" onclick=cancel()>
+<input type="button" value="Validate" onclick=validate()>
+</form>
+
+<SCRIPT language = "JavaScript">
+<!--
+function cancel()
+{
+   close();
+}
+
+
+function validate()
+{
+   valid = checker (document.options.XMin.value, 0, 1, "X Min") &&
+           checker (document.options.XMax.value, document.options.XMin.value, 1, "X Max") &&
+           checker (document.options.YMin.value, 10E-9999, 10E-1, "Y Min") &&
+	   checker (document.options.YMin.value, document.options.YMax.value, 10E-1, "Y Max");  // switched on the Y Max test because it's comparing strings, not numbers.
+//   if (valid) 
+document.options.submit()
+}
+
+function checker (val, min, max, name)
+{
+   if ((min<=val) && (max>=val))
+       return true;
+   else {
+       alert (name + " is not between its required values of " + min + " and " + max + ".");
+       return false;
+   }
+} 
+
+
+// -->
+</SCRIPT>
+
+</body>
+</html>
+
+
+
+

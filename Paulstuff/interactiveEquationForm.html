@@ -1,0 +1,91 @@
+<HTML>
+<BODY bgColor="white" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" onLoad="transferEqValues(window.parent.frames[0]);">
+<!-- Include functions that are common for the interactive forms -->
+<SCRIPT language="JavaScript" src="checker.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="common.js"> </SCRIPT>
+<SCRIPT language="JavaScript" src="commonForInteractiveForms.js"> </SCRIPT>
+<SCRIPT language="JavaScript" src="prefix_conversion.js"> </SCRIPT>
+<!-- End Include -->
+
+<SCRIPT language="JavaScript">
+<!--
+   var numEqs;
+   if (window.parent.frames[0].eqArr==null) {
+      numEqs = 0;
+   }
+   else {
+      numEqs = window.parent.frames[0].eqArr.length;
+   }
+
+document.write (''+
+   '<FORM name="equationForm">'+
+      '<TABLE width="95%">'+
+       '<TBODY width="100%">'+
+'');
+for (var i=0; i<numEqs+5; i++) {
+  document.write (''+
+         '<TR>'+
+          '<TD width="4%">&nbsp;</TD>'+
+          '<TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;"></TD>'+
+          '<TD align="center"><INPUT type="text" size="80" onchange="changed=true;"></TD>'+
+         '</TR>'+
+  '');
+}
+document.write (''+
+         '<TR>'+
+          '<TD width="4%">&nbsp;</TD>'+
+          '<TD align="center">GammaDotTotal</TD>'+
+          '<INPUT type="hidden" value="GammaDotTotal">'+
+          '<TD align="center"><INPUT type="text" size="80" onchange="changed=true;"></TD>'+
+         '</TR>'+
+        '</TBODY>'+
+      '</TABLE>'+
+   '</FORM>'+
+'');
+// -->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+   okCancelForm ('return validateEquation()','confirmCancel (window.parent.frames[0].document.equationSelectBox.equation[0])');
+// -->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+
+function validateEquation()
+{
+    if (!changed) {
+       return true;
+    }
+
+    thisForm = document.equationForm;
+ // Validation
+    convert (thisForm.elements);
+/*
+ // Save changes
+    var cookName = setCookieName (window.parent.frames[0].document.displaySelectBox.elements[1], window.parent.frames[0].getStandardDisplay(), "display option");
+    setCookie ('display', thisForm, cookName, firstValueIndex, lastValueIndex);
+    var valuesAsArr = formToArray (thisForm, firstValueIndex, lastValueIndex, cookName);
+    window.parent.frames[0].changeCustomDisplay (window.parent.frames[0].document.displaySelectBox.elements[1].selectedIndex-window.parent.frames[0].getStandardDisplay().length-2, valuesAsArr);
+    transferValues (thisForm, firstValueIndex, window.parent.frames[0].document.map, window.parent.frames[0].numMaterialElements);
+  // Close the interactive area of the frame
+    location.href = "empty.html";
+*/
+}
+
+function transferEqValues (sourceFrame) {
+    if (sourceFrame.eqArr!=null) {
+        for (var i=0; i<document.equationForm.elements.length; i++) {
+            document.equationForm.elements[i] = eqArr[i];
+        }
+    }
+
+}
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,155 @@
+This is a detailed explanation of what I have done so far with the deformation
+project for Professor Frost.
+
+
+General Idea:
+   This is a quick sum up of the basic layout of the interactive portion of the
+project.  First, the user accesses the interactive portion of the web page
+('interactive.html').  The user is given a series of input form fields labeled
+appropriately.  The user can either enter his/her own information into the 
+fields, or (if the browser supports JavaScript) the user can pick from a list
+of pre-entered data.  Once the data has been entered into the fields provided
+the user clicks on the submit button.  The information is sent to a Perl 
+program called 'defMechInput.cgi'.  This program checks the input data to see 
+if it has been entered correctly.  It then writes the data to a file called
+'inputData.dat'.  Next, the Perl program calls the C++ program 'graph' (written
+by Marco).  I added a function to 'graph' so that it reads the information
+stored in the file 'inputData.dat' and assigns it to the appropriate variables
+in 'graph'.  'graph' then creates a file called 'deformation.png'.  The Perl
+program ('defMechInput.cgi') creates a web page that displays 'deformation.png'
+nicely.  
+
+
+Specifics:
+
+symbolRef.html:
+    This page allows the user to quickly look up a symbol he/she is 
+interested in.  It is a recreation of pages vi-viii in the book.  I decided
+to use .gif images to create all of the symbols.  Some of the symbols could 
+have been created with certain fonts, but I thought that it would be better to
+be consistent and use all .gif images for the symbols.  This would also allow
+for a greater range of compatibility over a variety of browsers.  I have 
+written down a list of symbols and there appropriate .gif names.  All of the
+.gif images should be placed in a directory called 'pics/symbols' which should 
+be in the same directory as 'symbolRef.html'.
+Here is a picture of the general layout of the page:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Problems:
+  -the page takes the browser a long time to decode and open
+  -Lots of .gif images.  Seems kind of like a waste of space. 
+     Potential rec:  Scrap the page and use the scanned page that professor 
+                     frost has from the book.
+
+Things still to do:
+  -create all the .gif images and place them in dir pics/symbols (use the 
+	naming chart I wrote down and it should work).
+
+
+
+
+index.html:
+   This is the first page of the site.  It is a recreation of the book cover.
+However, I added a picture to it just to make it look nicer.  There are links
+at the top to the other pages.  The image source is 'pics/indexpic.GIF'.
+
+Problems:
+  -I made the picture from some scans of maps out of the book.  The image
+      isn't very clear.  Maybe it would be nice to make another picture
+      that is sharper.  
+
+
+
+
+interactive.html:
+   First, I'll start with the JavaScript.  I have created a pull down form that
+has a list of elements that the user can select.  When an element is selected
+the information for that element is automatically entered into the text fields.
+The JavaScript creates an array called element.  The element array is assigned
+different values depending on what is selected from the pull down form.  The
+values are then entered into their appropriate places in the form called
+'newMap'.  
+   Next, More JavaScript.  I have created the page so that if the browser
+does not support JavaScript it looks normal.  The pull down menu is not
+displayed, nor is the text "or pick from pre-entered data" if JavaScript is not
+enabled.  To do this I just have a series of <script> tags around the pull
+down menu and around the text stated previously.  There are also a series of
+<noscript> tags that will format the page correctly if JavaScript is not 
+supported.
+   Finally, the rest of the web page is just a series of input forms.  The 
+naming convention I used is in the notebook.  The notebook shows first the 
+name I used for the specific text field in the form, then the full name of 
+the variable, and finally the name Marco used in the C++ program 'graph'.
+The form uses the method "get", and the action opens 'defMechInput.cgi'.
+
+Problems:
+   -The page looks fine in Netscape, but when I accessed the page from home
+       using Internet Explorer it didn't format correctly.  My guess is that
+       there is a problem with the <script> tags around the pull down menu.
+   -I don't like the way data is entered into the array.  All of the data
+       is stored in the html document.  This is a problem if you wanted to 
+       have a pull down menu with a large amount of elements. I would prefer if
+       the input was read from some file.  However, I don't think JavaScript
+       can do that.  If this is a feature professor Frost would like,
+       it might be a good idea to find another way to do it.  
+
+Things to do:
+    -The units need to be added to the titles for each input field.  this is
+       easy, just use the .gif pictures from the symbol ref page.  I haven't
+       done it because the pictures haven't been made for the symbols yet.
+
+
+defMechInput.cgi:
+   This is a Perl script which takes the input data and processes it.  First,
+the program takes the input (i used the 'get' method.  I was going to use 
+'post' due to the amount of data being sent, however, I had problems 
+retrieving the data.  'get' seems to work just as well). It writes the data to
+a file called 'inputData.dat'.  The program then checks each of the
+inputs by calling the function 'dataCheck'. If 'dataCheck' returns a 1 then 
+the data is bad, and the cgi script terminates after displaying an error 
+message. If 'dataCheck' returns a 0 then the data is good, and the program 
+keeps running.  If all of the inputs are good then the cgi program calls the 
+program 'graph'.  'graph' runs and creates the file 'deformation.png'.  When 
+'graph' is done, the cgi script continues.  It displays a page with the newly 
+created map framed in the middle.  
+
+Problems:
+   -The function 'dataCheck' does not find all bad data.  It doesn't notice
+       if no data is entered in one of the fields.  There might be some other 
+       input that I haven't thought of that would get by 'dataCheck'.
+
+
+
+
+
+Things to do:
+   -The cgi code creates a random name for the map that is to be displayed
+    	every time a new map is created.  This map is placed in the 'temp'
+	folder.  Eventually the folder is going to be filled with '.png' files
+	For now I have written the cgi code so that it erases
+	everything in the folder every time it is called.  This is ok for
+	now, but if multiple users want to use the site they will end up
+	erasing each others data. Find a better way.   
+
+   -When the program graph is running it reads from the file 'inputData.dat'
+	then it creates the files 'thinplot.dat', 'thickplot.dat', and 
+	'deformation.png'.  The problem is the if multiple users are using
+	the site at the same time these files may overlap.  I suggest giving
+	these files random names for each user.  
+
+
+

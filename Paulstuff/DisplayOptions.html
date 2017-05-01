@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+
+<! Main form, where user's view/edit display options.>
+
+<FORM name=options>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD width="4%"></TD>
+    <TD width="34%"></TD>
+    <TD align=middle><B>Min </B></TD>
+    <TD align=middle><B>Max </B></TD></TR>
+  <TR>
+    <TD width="4%"></TD>
+    <TD width="30%"><B>X Axis (T/Tm)</B></TD>
+    <TD><INPUT name=XMin size="20" > </TD>
+    <TD><INPUT name=XMax size="20" > </TD></TR>
+  <TR>
+    <TD width="4%"></TD>
+    <TD width="30%"><B>Y Axis </B></TD>
+    <TD><INPUT name=YMin size="20" > </TD>
+    <TD><INPUT name=YMax size="20" > </TD></TR>
+  <TR>
+    <TD></TD><TD></TD><TD></TD><TD></TD><TD align="center"> Number of Contours </TD>
+  </TR>
+  <TR>
+    <TD width="4%"></TD>
+    <TD width="30%"><B>Contours</B></TD>
+    <TD><INPUT name=ContoursMin size="20"> </TD>
+    <TD><INPUT name=ContoursMax size="20"> </TD>
+    <TD><INPUT name=NumContours size="20"> </TD> </TR>
+</TBODY></TABLE>
+    <INPUT onclick=restoreDefaults() type=button value="Restore Defaults">
+<p><p>
+<TABLE><TBODY>
+<TR>
+    <TD width=50%"></TD>
+    <TD><INPUT onclick=cancel() type=button value=Cancel>
+</TD>
+    <TD><INPUT onclick=validate() type=button value=Submit>
+</TD></TR>
+</TBODY>
+</TABLE>
+</FORM>
+
+<!-- Call the javascript that handles the validation of data, checker.js-->
+<SCRIPT src = "checker.js" language = "JavaScript">
+
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+
+<!--
+
+// Put current values into form.
+// window.opener.transferModeqsValues(document.equations);
+for (var j=0; j<24; j=j+2) {
+    	alert (window.opener.newMap[j+25].value);
+    	alert (document.equations[j*2+3].value);
+    	alert ("next");
+    	break;
+    	// y.document.equations[j*2+3].value=document.newMap[j+25].value;
+    }
+
+   // getCookie is used to get the DispOptionsCookie cookie, which communicates the current display options
+   //   from interactive.html to this page.
+
+   // getCookie function taken from http://www.cookiecentral.com/faq/#5.2
+   function getCookie(name) {
+         var cookie = " " + document.cookie;
+         var search = " " + name + "=";
+         var setStr = null;
+         var offset = 0;
+         var end = 0;
+         if (cookie.length > 0) {
+                 offset = cookie.indexOf(search);
+                 if (offset != -1) {
+                         offset += search.length;
+                         end = cookie.indexOf(";", offset)
+                         if (end == -1) {
+                                 end = cookie.length;
+                         }
+                         setStr = unescape(cookie.substring(offset, end));
+                 }
+         }
+         return (setStr);
+   }
+
+   //
+   if (getCookie("DispOptionsCookie")==null) {    // If DispOptionsCookie doesn't exist, the page has not been called from interactive.html
+        confirm ("This page must be called from interactive.html, with cookies active.");
+        close();
+   }
+   else {
+           // Set options form values to be the current ones from the cookie. Delete the cookie.
+        var disps = getCookie("DispOptionsCookie").split ('|');
+        document.cookie = "DispOptionsCookie = jibberish; expires=Mon, 01-Jan-1985 00:00:00 GMT; path=/;";
+        document.options.XMin.value = disps[0];
+        document.options.XMax.value = disps[1];
+        document.options.YMin.value = disps[2];
+        document.options.YMax.value = disps[3];
+        document.options.ContoursMin.value = disps[4];
+        document.options.ContoursMax.value = disps[5];
+        document.options.NumContours.value = disps[6];
+   }
+
+
+// -----------------------------------------------------
+
+// The following javascript functions handle the form's buttons.
+
+
+function restoreDefaults()
+// Put default values into form.
+{
+   document.options.XMin.value = "0";
+   document.options.XMax.value = "1";
+   document.options.YMin.value = "10E-6";
+   document.options.YMax.value = "1";
+   document.options.ContoursMin.value = "1E-10";
+   document.options.ContoursMax.value = ".1";
+   document.options.NumContours.value = "10";
+}
+
+function cancel()
+// Close the form without updating newMap's values.
+{
+   close();
+}
+
+
+function validate()
+// 1. Check that all field entries are numbers and in the correct intervals
+// 2. Update newMap's values to reflect the new ones.
+// 3. Close the window.
+{
+
+   if (!noLetters(document.options.XMin.value))
+       alert ("Invalid X Min - not a number.")
+   else if (!noLetters(document.options.XMax.value))
+       alert ("Invalid X Max - not a number.")
+   else if (!noLetters(document.options.YMin.value))
+         alert ("Invalid Y Min - not a number.")
+   else if (!noLetters(document.options.YMax.value))
+         alert ("Invalid Y Max - not a number.")
+   else if (!noLetters(document.options.ContoursMin.value))
+         alert ("Invalid Contours Min - not a number.")
+   else if (!noLetters(document.options.ContoursMax.value))
+         alert ("Invalid Contours Max - not a number.")
+   else if (!noLetters(document.options.NumContours.value))
+         alert ("Invalid Number of Contours - not a number.");
+
+   else if (!interval (document.options.XMin.value,'[',"0","1",']'))
+       alert ("Invalid X Min - outside interval [0,1]")
+   else if (!interval (document.options.XMax.value,'(',document.options.XMin.value,"1",']'))
+       alert ("Invalid X Max - outside interval (XMin, 1]")
+   else if (!interval (document.options.YMin.value,'(',"0","1",']'))
+       alert ("Invalid Y Min - Greater than 1.")
+   else if (!interval (document.options.YMax.value,'(',document.options.YMin.value,"1",']'))
+       alert ("Invalid Y Max - outside interval (YMin, 1]")
+   else if (!interval (document.options.ContoursMin.value, '[',"10E-20","10E10",']'))
+       alert ("Invalid Contours Min - outside interval [10E-20, 10E10]")
+   else if (!interval (document.options.ContoursMax.value,'(',document.options.ContoursMin.value,"10E10",']'))
+       alert ("Invalid Contours Max - outside interval (ContoursMin, 10E10]")
+   else if (!interval (document.options.NumContours.value,'[','0','400',']'))
+       alert ("Invalid Number of Contours - outside interval [0, 400]")
+
+   else {
+// 2. All of the data is valid, update newMap's values.alert ("prior");
+alert (window.opener.updateDispOptions());
+   // interactive.html is the parent of this window.
+         window.opener.document.newMap.XMin.value = document.options.XMin.value;
+         window.opener.document.newMap.XMax.value = document.options.XMax.value;
+         window.opener.document.newMap.YMin.value = document.options.YMin.value;
+         window.opener.document.newMap.YMax.value = document.options.YMax.value;
+         window.opener.document.newMap.ContoursMin.value = document.options.ContoursMin.value;
+         window.opener.document.newMap.ContoursMax.value = document.options.ContoursMax.value;
+         window.opener.document.newMap.NumContours.value = document.options.NumContours.value;
+	 window.opener.newMapChanged();
+
+
+// 3. Close the window.
+       close();
+   }
+}
+
+
+// -->
+
+</SCRIPT>
+</BODY></HTML>
+

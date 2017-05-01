@@ -1,0 +1,25 @@
+<HTML>
+ <HEAD>
+   <TITLE>Create your own Map</TITLE>
+ </HEAD>
+
+<SCRIPT language="JavaScript">
+<!--
+  // The older netscape browsers do not work the same way as new Netscape or IE, for some reason.
+   if (document.layers) {
+      document.write('<FRAMESET name="mainFrameSet" id="mainFrameSet" frameborder="no" rows="130,*">');
+   }
+   else {
+      document.write('<FRAMESET name="mainFrameSet" id="mainFrameSet" frameborder="no" rows="250,*">');
+   }
+//-->
+</SCRIPT>
+<FRAME noresize src="mainForm.html" marginwidth="0" marginheight="0" scrolling="no">
+<FRAME name="interactiveFormFrame" src="empty.html" marginwidth="0" marginheight="0" scrolling="auto">
+<NOFRAMES>
+<BODY topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+   Sorry, this page uses frames, but your browser does not support them.
+</BODY>
+</NOFRAMES>
+</FRAMESET>
+</HTML>

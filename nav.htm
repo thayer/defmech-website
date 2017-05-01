@@ -1,0 +1,166 @@
+<html>
+<script language="JavaScript">
+
+var i = 0; //i=0 the first time one of the nav bars is clicked; next time it's 1.
+var currentHighlightBar; //this holds the object of the current highlighted nav bar.
+
+// swap navbars for onMouseOver and onMouseOut events.
+function swapImage(image, newsrc)
+{	
+	src = image.src;
+	chkpt = src.length-5;
+	if(src.charAt(chkpt)=="3") //if the nav bar is currently highlighted, do nothing.
+		return;
+	else
+		image.src=newsrc;
+}
+
+// change the nav bar with a highlighted image. The default highlighted nav bar is "home".
+function highlightNavBar(image, newsrc)
+{
+	image.src=newsrc;
+	var currentsrc, currentsrclength;
+	if(i == 0)
+	{
+		currentHighlightBar=document["home"]; //the old highlighted nav bar must be "home" the first time a nav bar is clicked.
+		currentsrc=document["home"].src;
+		i=1; //to indicate next time that a nav bar has been clicked before.
+	}
+	else
+		currentsrc=currentHighlightBar.src;
+		
+	currentsrclength=currentsrc.length;
+	
+	//switch the old highlighted nav bar image back to the unhighlighted one.
+	currentHighlightBar.src=currentsrc.substring(0,currentsrclength-5) + "1.gif"; 
+	
+	currentHighlightBar=image;
+}
+
+
+</script>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Home</title>
+<base target="main">
+</head>
+
+<body>
+
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="103%" bgcolor="#FFFFFF" height="425">
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="23">
+      <a href="home.htm">
+      <img name="home" border="0" src="images/home-3.gif" width="118" height="17" onClick=highlightNavBar(this,"images/home-3.gif") onMouseOver=swapImage(this,"images/home-2.gif") onMouseOut=swapImage(this,"images/home-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="23">
+      <a href="table_of_contents.htm">
+      <img border="0" src="images/tbc-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/tbc-3.gif") onMouseOver=swapImage(this,"images/tbc-2.gif") onMouseOut=swapImage(this,"images/tbc-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_1.htm">
+      <img border="0" src="images/chap1-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap1-3.gif") onMouseOver=swapImage(this,"images/chap1-2.gif") onMouseOut=swapImage(this,"images/chap1-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_2.htm">
+      <img border="0" src="images/chap2-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap2-3.gif") onMouseOver=swapImage(this,"images/chap2-2.gif") onMouseOut=swapImage(this,"images/chap2-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_3.htm">
+      <img border="0" src="images/chap3-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap3-3.gif") onMouseOver=swapImage(this,"images/chap3-2.gif") onMouseOut=swapImage(this,"images/chap3-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_4.htm">
+      <img border="0" src="images/chap4-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap4-3.gif") onMouseOver=swapImage(this,"images/chap4-2.gif") onMouseOut=swapImage(this,"images/chap4-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="16">
+      <a href="chapter_5.htm">
+      <img border="0" src="images/chap5-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap5-3.gif") onMouseOver=swapImage(this,"images/chap5-2.gif") onMouseOut=swapImage(this,"images/chap5-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_6.htm">
+      <img border="0" src="images/chap6-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap6-3.gif") onMouseOver=swapImage(this,"images/chap6-2.gif") onMouseOut=swapImage(this,"images/chap6-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_7.htm">
+      <img border="0" src="images/chap7-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap7-3.gif") onMouseOver=swapImage(this,"images/chap7-2.gif") onMouseOut=swapImage(this,"images/chap7-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_8.htm">
+      <img border="0" src="images/chap8-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap8-3.gif") onMouseOver=swapImage(this,"images/chap8-2.gif") onMouseOut=swapImage(this,"images/chap8-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_9.htm">
+      <img border="0" src="images/chap9-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap9-3.gif") onMouseOver=swapImage(this,"images/chap9-2.gif") onMouseOut=swapImage(this,"images/chap9-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_10.htm">
+      <img border="0" src="images/chap10-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap10-3.gif") onMouseOver=swapImage(this,"images/chap10-2.gif") onMouseOut=swapImage(this,"images/chap10-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_11.htm">
+      <img border="0" src="images/chap11-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap11-3.gif") onMouseOver=swapImage(this,"images/chap11-2.gif") onMouseOut=swapImage(this,"images/chap11-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_12.htm">
+      <img border="0" src="images/chap12-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap12-3.gif") onMouseOver=swapImage(this,"images/chap12-2.gif") onMouseOut=swapImage(this,"images/chap12-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_13.htm">
+      <img border="0" src="images/chap13-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap13-3.gif") onMouseOver=swapImage(this,"images/chap13-2.gif") onMouseOut=swapImage(this,"images/chap13-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_14.htm">
+      <img border="0" src="images/chap14-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap14-3.gif") onMouseOver=swapImage(this,"images/chap14-2.gif") onMouseOut=swapImage(this,"images/chap14-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_15.htm">
+      <img border="0" src="images/chap15-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap15-3.gif") onMouseOver=swapImage(this,"images/chap15-2.gif") onMouseOut=swapImage(this,"images/chap15-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_16.htm">
+      <img border="0" src="images/chap16-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap16-3.gif") onMouseOver=swapImage(this,"images/chap16-2.gif") onMouseOut=swapImage(this,"images/chap16-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_17.htm">
+      <img border="0" src="images/chap17-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap17-3.gif") onMouseOver=swapImage(this,"images/chap17-2.gif") onMouseOut=swapImage(this,"images/chap17-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="chapter_18.htm">
+      <img border="0" src="images/chap18-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap18-3.gif") onMouseOver=swapImage(this,"images/chap18-2.gif") onMouseOut=swapImage(this,"images/chap18-1.gif")></a></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#FFFFFF" height="19">
+      <a href="Chapter_19.htm">
+      <img border="0" src="images/chap19-1.gif" width="118" height="17" onClick=highlightNavBar(this,"images/chap19-3.gif") onMouseOver=swapImage(this,"images/chap19-2.gif") onMouseOut=swapImage(this,"images/chap19-1.gif")></a></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+</html>

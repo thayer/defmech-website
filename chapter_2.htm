@@ -1,0 +1,1859 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<title>Chapter 2</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"New York";
+	panose-1:2 4 5 3 6 5 6 2 3 4;}
+@font-face
+	{font-family:Geneva;}
+@font-face
+	{font-family:Times;
+	panose-1:2 2 6 3 5 4 5 2 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Times;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Times;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>
+<a name="CHAPTER 2">CHAPTER 2</a></b></p>
+
+<hr>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>RATE-EQUATIONS</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>2.1
+<a href="#2.1 ELASTIC COLLAPSE">Elastic Collapse&nbsp;</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>2.2
+<a href="#2.2 LOW-TEMPERATURE PLASTICITY: DISLOCATION GLIDE">Low-Temperature 
+Plasticity: Dislocation Glide</a></p>
+
+<ul>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Plasticity limited by discrete obstacles">Plasticity limited by 
+discrete obstacles</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Plasticity limited by a lattice resistance">Plasticity limited by a 
+lattice resistance</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Plasticity limited by phonon or electron drags">Plasticity limited by 
+phonon or electron drags</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#The influence of alloying on dislocation glide">The influence of 
+alloying on dislocation glide</a></p>
+
+  </li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>2.3
+<a href="#2.3 MECHANICAL TWINNING">Mechanical Twinning</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>2.4
+<a href="#2.4 HIGH-TEMPERATURE PLASTICITY: POWER-LAW CREEP">High-Temperature 
+Plasticity: Power-Law Creep</a></p>
+
+<ul>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Power-law creep by glide alone">Power-law creep by glide alone</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Power-law creep by climb-plus-glide">Power-law creep by 
+climb-plus-glide</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Harper-Dorn creep">Harper-Dorn creep</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Power-law breakdown">Power-law breakdown</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#Dynamic recrystallization">Dynamic recrystallization</a></p>
+
+  </li>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#The influence of alloying on power-law creep">The influence of 
+alloying on power-law creep</a></p>
+
+  </li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>2.5
+<a href="#2.5 DIFFUSIONAL FLOW">Diffusional Flow</a></p>
+
+<ul>
+  <li>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#INFLUENCE OF ALLOYING ON DIFFUSIONAL FLOW">Influence of alloying on 
+diffusional flow</a></p>
+
+  </li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;line-height:18pt'>
+<a href="#References for Chapter 2">References for Chapter 2</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>IN THIS
+chapter we develop, with a brief explanation, the rate-equations used
+later to construct the maps. We have tried to select, for each mechanism, the
+simplest equation which is based on a physically sound microscopic model, or
+family of models. Frequently this equation contains coefficients or exponents
+for which only <i>bounds </i> are known; the model is too imprecise, or the
+family of models too broad, to predict exact values. Theory gives the form of
+the equation; but experimental data are necessary to set the constants which
+enter it. This approach of “model-based phenomenology” is a fruitful one when
+dealing with phenomena like plas­ticity, which are too complicated to model
+exactly. One particular advantage is that an equation obtained in this way can
+with justification (since it is based on a physical model) be extrapolated
+beyond the range of the data, whereas a purely empirical equation cannot.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            In
+accordance with this approach we have aimed at a precision which corresponds
+with the general accuracy of experiments, which is about ±10% for the yield
+strength (at given <i>T</i> and <font face="Times New Roman">&#948;</font>, and state of work-hardening),
+or by a factor of two for strain­rate at given <font face="Times New Roman">&#963;<sub>s</sub></font> and <i>T </i>). For this reason we
+have included the temperature-dependence of the elastic moduli but have
+ignored that of the atomic volume and the Burgers' vector.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pressure is
+not treated as a variable in this chapter. The influence of pressure on each
+mechanism is discussed, with data, in Chapter 17, Section 17.4.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+equations used to construct the maps of later chapters are indicated in a box.
+Symbols are defined where they first appear in the text, and in the table on
+pages ix to xi.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber33">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="2.1 ELASTIC COLLAPSE">2.1 ELASTIC
+COLLAPSE</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+<i>ideal shear strength </i> defines a stress level above which deformation of
+a perfect crystal (or of one in which all defects are pinned) ceases to be
+elastic and becomes catastrophic: the crystal structure becomes mechanically
+unstable. The instability condition, and hence the ideal strength at 0 <span
+style='font-family:Symbol'>K</span>, can be calculated from the crystal
+structure and an inter-atomic force law by simple statics (Tyson, 1966; Kelly,
+1966) [1, 2]. Above 0 K the problem becomes a kinetic one: that of calculating the frequency at which dislocation loops nucleate and expand in an initially defect-free crystal. We have ignored the kinetic problem and assumed the temperature­dependence of the ideal strength to be the same as that of the shear modulus,
+<span style="font-family: Times New Roman; font-style: italic">&#956;</span>, of the polycrystal. Plastic flow by
+collapse of the crystal structure can then be described by:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="64">
+  <tr>
+    <td width="85%" height="64">
+    <p align="center"> 
+    <img border="1" src="chapter_2_files/image216.gif" width="143" height="48"></td>
+    <td width="15%" height="64">(2.1) </td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Computations
+of <span style="font-family: Times New Roman">&#945;</span> lead to values between 0.05 and
+0.1, depending on the crystal structure and the force law, and on the
+instability criterion. For the f.c.c. metals we have used
+<font face="Times New Roman">&#945;</font> = 0.06, from the computer calculations of
+Tyson (1966) [1] based on a Lennard-Jones potential. For b.c.c. metals we have used
+<font face="Times New Roman">&#945;</font> = 0.1, from the analytical calculation of MacKenzie (1959) [3]. For all other materials we have used
+<font face="Times New Roman">&#945; </font>=0.1.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>&nbsp;</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>&nbsp;</b></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber34">
+  <tr>
+    <td width="79%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="2.2 LOW-TEMPERATURE PLASTICITY: DISLOCATION GLIDE">2.2 LOW-TEMPERATURE
+PLASTICITY: DISLOCATION
+GLIDE</a></b></p>
+
+    </td>
+    <td width="21%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Below
+the ideal shear strength, flow by the con­servative, or glide, motion of
+dislocations is possible—provided (since we are here concerned with poly­crystals)
+an adequate number of independent slip systems is available (Figs. 2.1 and
+2.2). This motion is almost always <i>obstacle-limited</i>: it is the
+interaction of potentially mobile dislocations with other dis­locations, with
+solute or precipitates, with grain boundaries, or with the periodic friction
+of the lattice itself which determines the rate of flow, and (at a given rate)
+the
+yield strength. The yield strength of many polycrystalline materials does not
+depend strongly on the rate of straining—a fact which has led to models for
+yielding which ignore the effect of strain-rate (and of temperature)
+entirely. But this is misleading: dislocation glide is a kinetic process. A
+density <i><font face="Times New Roman">&#961;<sub>m</sub></font></i> of
+mobile dislocations, moving through a field of obstacles with an average
+velocity&nbsp; <img src="chapter_2_files/image005.gif" width="12" height="15"> determined
+almost entirely by their waiting time at obstacles, produces a strain-rate
+(Orowan, 1940) [4] of:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2" height="40">
+  <tr>
+    <td width="85%" height="40">
+    <p align="center"> 
+    <img border="0" src="chapter_2_files/image217.gif" width="67" height="24"></td>
+    <td width="15%" height="40">(2.2)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>b</i> <i> </i>is<i> </i>the magnitude of the Burgers' vector of
+the dislocation. At steady state, <font face="Times New Roman"><i>&#961;<sub>m</sub></i>,</font> <sub> </sub>is a function of stress
+and temperature only. The simplest function, and one consistent with both
+theory (Argon, 1970) [5] and experiment is:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3" height="63">
+  <tr>
+    <td width="85%" height="63">
+    <p align="center"> <sub><img src="chapter_2_files/image007.gif" width="92" height="49"></sub></td>
+    <td width="15%" height="63">(2.3)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where
+<font face="Times New Roman">&#945;</font> is a constant of
+order unity. The velocity <img
+src="chapter_2_files/image005.gif" width="12" height="15"> depends on the force
+<i>F =<font face="Times New Roman"> &#963;<sub>s</sub>b</font></i> acting,
+per unit length, on the dislocation, and on its mobility, <i>M</i> :</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4" height="32">
+  <tr>
+    <td width="85%" height="32">
+    <p align="center">&nbsp;<img src="chapter_2_files/image005.gif" width="12" height="15">= <i>MF</i></td>
+    <td width="15%" height="32">(2.4)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.1.gif" width="428" height="235"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig. 2.1.
+Low-temperature plasticity limited by discrete obstacles. The strain-rate
+is determined by the kinetics of obstacle cutting.</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>&nbsp;</b></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.2.gif" width="432" height="221"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig. 2.2.
+Low-temperature plasticity limited by a lattice resistance. The strain-rate
+is determined by the kinetics of kink nucleation and propagation.</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+kinetic problem is to calculate <i>M, </i>and thus
+<img src="chapter_2_files/image005.gif" width="12" height="15">. In the most interesting
+range of stress, <i>M</i>  is determined by the rate at which dislocation
+segments are thermally activated through, or round, obstacles. In developing
+rate-equations for low-temperature plasticity (for reviews, see
+Evans and Rawlings, 1969; Kocks <i>et al</i>., 1975; de Meester <i>et al., </i>1973)
+[6-8] one immediately encounters a difficulty: the  velocity is always an exponential function of stress, but the details of the exponent depend on the shape and nature of the obstacles. At first sight there are as many rate-equations as there are types of obstacle. But on closer examination, obstacles fall into two broad classes: discrete obstacles which are bypassed individually by a moving dislocation (strong dispersoids or precipitates, for example) or cut by it (such as forest dislocations or weak precipitates); and extended, diffuse barriers to dislocation motion which are overcome collectively (a lattice-friction, or a concentrated solid solution). The approach we have used is to select the rate-equation which most nearly describes a given class of obstacles, and to treat certain of the parameters which appear in it as adjustable, to be matched with experiment. This utilizes the most that model-based theory has to offer, while still ensuring an accurate description of experimental data.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber35">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Plasticity limited by discrete obstacles">Plasticity
+limited by discrete obstacles</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+velocity of dislocations in a polycrystal is frequently determined by the
+strength and density of the <i>discrete obstacles  </i>it contains (Fig. 2.1).
+If the Gibbs free-energy of activation for the cutting or by-passing
+of an  obstacle is <font face="Times New Roman">&#8710;G(&#963;<sub>s</sub>)</font>, the mean velocity of a dislocation
+segment, <img src="chapter_2_files/image005.gif" width="12" height="15">,
+is given by the kinetic equation (see reviews listed above):</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5" height="58">
+  <tr>
+    <td width="85%" height="58">
+    <p align="center"> <sub><img src="chapter_2_files/image011.gif" width="148" height="41"></sub></td>
+    <td width="15%" height="58">(2.5)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where
+<font face="Times New Roman">&#946;</font>, is a
+dimensionless constant,<i> b  </i>is<i> </i>the magni­tude of the Burgers'
+vector, and <img src="chapter_2_files/image005.gif" width="12" height="15"> is
+a frequency.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The quantity
+&#8710;<i>G</i>(<font face="Times New Roman">&#963;<sub>s</sub></font>)
+depends on the distribution of obstacles and on the pattern of internal stress,
+or “shape”, which characterizes one of them. A regular array of box-shaped
+obstacles (each one viewed as a circular patch of constant, adverse, internal
+stress) leads to the simple result:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6" height="57">
+  <tr>
+    <td width="85%" height="57">
+    <p align="center"> <sub><img src="chapter_2_files/image013.gif" width="148" height="40"></sub></td>
+    <td width="15%" height="57">(2.6)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where &#8710;<i>F&nbsp;</i>is the total free energy (the <i>activation energy)  </i>required to
+overcome the obstacle without aid from external stress. The material property <sub>
+<img src="chapter_2_files/image014.gif" width="11" height="17"> </sub>is the stress
+which reduced &#8710;G to zero, forcing the dislocation through the obstacle
+with no help from thermal energy. It can be thought of as the flow strength of
+the solid at 0 K.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            But
+obstacles are seldom box-shaped and regularly spaced. If other obstacles are
+considered, and allowance is made for a random, rather than a regular,
+distribution, all the results can be described by the general equation (Kocks <i>et
+al., </i>1975) [7]:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7" height="69">
+  <tr>
+    <td width="85%" height="69">
+    <p align="center"> <sub><img src="chapter_2_files/image015.gif" width="179" height="55"></sub></td>
+    <td width="15%" height="69">(2.7)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>The quantities
+<i>p</i>, <i>q</i> and &#8710;<i>F&nbsp;</i>are bounded: all models lead
+to values of</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber8" height="58">
+  <tr>
+    <td width="85%" height="58">
+    <p align="center"> <sub><img src="chapter_2_files/image017.gif" width="60" height="43"></sub></td>
+    <td width="15%" height="58">(2.8)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>The importance
+of
+<i>p </i>and <i>q</i> depends on the magnitude of &#8710;<i>F.&nbsp;</i>When &#8710;<i>F&nbsp;</i>is large,
+their influence is small, and the choice is unimportant; for discrete
+obstacles, we use <i>p</i> = <i>q</i> = 1. But when &#8710;<i>F is&nbsp;
+</i>small, the choice
+of <i>p</i> and <i>q</i> becomes more critical; for diffuse obstacles we use
+values derived by fitting data to eqn.(2.7) in the way described in the next
+sub-section.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+strain rate sensitivity of the strength is deter­mined by the activation energy 
+&#8710;<i>F—</i>it
+characterizes the strength of a single obstacle. It is helpful to class
+obstacles by their strength, as shown in Table 2.1; for strong obstacles &#8710;<i>F</i> is about 2<font face="Times New Roman">&#956;<i>b</i><sup>3</sup></font> for weak, as low
+as 0.05<font face="Times New Roman">&#956;<i>b</i><sup>3</sup></font>.
+A value of &#8710;<i>F</i> is
+listed in the Tables of Data for each of the materials analysed in this book.
+When dealing with pure metals and ceramics in the work-hardened state, we
+have used &#8710;<i>F=
+</i>0.5 <font face="Times New Roman">&#956;<i>b</i><sup>3</sup>.</font> </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/table2.1.gif" width="397" height="313"></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+quantity <img src="chapter_2_files/image014.gif" width="11" height="17"><sub>  </sub>is
+the &quot;athermal flow strength&quot;— the shear strength in the absence of
+thermal energy. It reflects not only the strength but also the density and
+arrangement of the obstacles. For widely ­spaced, discrete obstacles,
+<img src="chapter_2_files/image014.gif" width="11" height="17"> is proportional
+to <i><font face="Times New Roman">&#956;b</i>/<i>l</i></font> where<i> l</i> is
+the obstacle
+spacing; the constant of pro­portionality depends on their strength and distribution
+(Table 2.1). For pure metals strengthened by work-hardening we have
+simply used  <img src="chapter_2_files/image014.gif" width="11" height="17"> =<sub> </sub>
+<font face="Times New Roman"><i>&#956;b</i>/<i>l</i></font><sub> </sub> (which
+can be
+expressed in terms of the <i><font face="Times New Roman">&#961;</font></i> density<span style='font-family:Geneva'>,
+</span>of forest dislocations: <sub><img
+src="chapter_2_files/image022.gif" width="49" height="21"></sub>). The Tables <span style='font-family:
+Geneva'>of </span>Data list <sub><img
+src="chapter_2_files/image023.gif" width="35" height="21"></sub>, thereby specifying
+the degree of
+work­hardening.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            If
+we now combine eqns (2.3), (2.4), (2.5) and (2.7) we obtain the <i>rate-equation
+for discrete-obstacle controlled plasticity:</i></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber9">
+  <tr>
+    <td width="7%">
+    &nbsp;<p>where</td>
+    <td width="163%">
+    <p align="center"><b><sub>&nbsp;</sub></b><img border="1" src="chapter_2_files/image220.gif" width="185" height="104"></td>
+    <td width="15%">(2.9)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>When &#8710;<i>F&nbsp;</i>is large
+(as here), the stress dependence of the exponential is so large that, that of
+the pre-­exponential can be ignored. Then <sub>
+<img border="0" src="chapter_2_files/image026.gif" width="19" height="24"> </sub>can be treated as a constant. We have
+set <sub><img src="chapter_2_files/image026.gif" width="21" height="23"></sub> = 
+10<sup>6 </sup>/s, giving a good fit
+to experimental data.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Eqn.
+(2.9) has been used in later chapters to describe plasticity when the strength
+is determined by work-hardening or by a strong precipitate or dispersion;
+but its influence is often masked by that of a diffuse obstacle: the lattice
+resistance, the subject of the next section.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber36">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Plasticity limited by a lattice resistance">Plasticity
+limited by a lattice resistance</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+velocity of a dislocation in most polycrystal­line solids is limited by an
+additional sort of barrier: that due to its interaction with the atomic
+structure itself (Fig. 2.2). This <i>Peierls  force  </i>or <i>lattice
+resistance </i> reflects the fact that the energy of the dislocation fluctuates
+with position; the amplitude and wave­length of the fluctuations are determined
+by the strength and separation of the inter-atomic or inter­molecular bonds. The
+crystal lattice presents an array of long, straight barriers to the motion of
+the dislocation; it advances by throwing forward kink pairs (with help from the
+applied stress and ther­mal energy) which subsequently spread apart (for
+reviews see Guyot and Dorn, 1967; Kocks <i>et al., </i>1975) [7, 9].</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            It
+is usually the nucleation-rate of kink-pairs which limits
+dislocation velocity. The Gibbs free energy of activation for this event
+depends on the detailed way in which the dislocation energy fluctu­ates with
+distance, and on the applied stress and temperature. Like those for discrete
+obstacles, the activation energies for all reasonable shapes of lattice
+resistance form a family described <span style='font-family:Geneva'>(</span>as
+before) by:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber10" height="78">
+  <tr>
+    <td width="85%" height="78">
+    <p align="center"> <sub><img src="chapter_2_files/image028.gif" width="184" height="65"></sub></td>
+    <td width="15%" height="78">(2.10)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:-8.2pt;text-align:justify;line-height:
+24.0pt'>where &#8710;<i>F<sub>p</sub></i> is the Helmholtz free energy of an isolated pair of
+kinds and <sub>
+<img border="0" src="chapter_2_files/image221.gif" width="19" height="25"></sub> is,
+to a sufficient approximation, the flow stress at 0 K<a href="#asterik"><strong>*</strong></a>. An analysis of
+data (of which Fig. 2.3 is an example) allows <i>p</i> and <i>q </i>to be determined.
+We find the best choice to be:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber11" height="78">
+  <tr>
+    <td width="85%" height="78">
+    <p align="center"> <sub><img src="chapter_2_files/image030.gif" width="201" height="65"></sub></td>
+    <td width="15%" height="78">(2.11)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>Combining this
+with eqns. (2.2), (2.3) and (2.5) leads to a model-based <i>rate-equation
+for plasticity limited by a lattice resistance:</i></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber12" height="65">
+  <tr>
+    <td width="85%" height="65">
+    <p align="center"> 
+    <img border="1" src="chapter_2_files/image222.gif" width="303" height="53"></td>
+    <td width="15%" height="65">(2.12)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.3.gif" width="418" height="440"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig. 2.3.
+Predicted contours for  </b> <sub><img
+src="chapter_2_files/image095.gif" width="12" height="19"></sub><b>= 10<sup>-3</sup>/s for various formulations of the lattice-resistance
+controlled glide equation (eqn. (2.12)), compared with data for tungsten.</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+influence of the choice of <i>p</i> and <i>q </i>is illustrated in Fig. 2.3.
+It shows how the measured strength of tungsten (Raffo, 1969) [10] varies with temperature, compared with the predictions of eqn. (2.12), with various combinations of <i>p</i> and <i>q. </i>It justifies the choice of 3/4 and 4/3, although it can be seen that certain other combinations are only slightly less good.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><strong>*<a name="asterik"></a> The equation
+of Guyot and Dorn (1967) [9] used in the earlier report (Ashby, 1972a) [11] will be recognized as the special case of <i>p</i> = 1, <i>q</i> = 2. This equation was misprinted as <sub>
+<img src="chapter_2_files/image032.gif" width="85" height="31"></sub> instead
+of <sub>
+<img src="chapter_2_files/image033.gif" width="84" height="31"></sub> in the
+paper by
+Ashby (1972a).</strong></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+pre-exponential of eqn. (2.12) contains a term in <sub>
+<img src="chapter_2_files/image034.gif" width="21" height="23"></sub> arising from the variation
+of mobile disloca­tion density with stress (eqn. (2.3), which must, when
+<font face="Times New Roman">&#8710;<i>F<sub>p</sub></i></font> is<i> </i>small
+(as here), be retained. In using eqn. (2.12) to describe the low-temperature
+strength of the b.c.c. metals and of ceramics, we have used <sub>
+<img border="0" src="chapter_2_files/image037.gif" width="20" height="25"></sub>= 10<sup>11</sup>/s —a mean value obtained by
+fitting data to eqn. (2.12). If data allow it, <sub>
+<img
+src="chapter_2_files/image037.gif" width="21" height="25"></sub> should be determined from experiment;
+but its value is not nearly as critical as those of
+<font face="Times New Roman">&#8710;<i>F<sub>p</sub></i></font> and  <sub>
+<img src="chapter_2_files/image038.gif" width="19" height="23"></sub>, and data of sufficient
+precision to justify changing it are rarely available. With this value of <sub>
+<img src="chapter_2_files/image037.gif" width="21" height="25"></sub> the quantities <font face="Times New Roman">&#8710;<i>F<sub>p</sub></i></font> (typically 0.1 <i>
+<font face="Times New Roman">&#956;b<sup>3</sup></font></i>) and <sub>
+<img src="chapter_2_files/image038.gif" width="19" height="23"></sub> (typically 
+10<sup>-2</sup> <font face="Times New Roman">&#956;</font>) are obtained by
+fitting eqn. (2.12) to experimental data for the material in question. The
+results of doing this are listed in the Tables of Data in following chapters.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            It
+should be noted that the values of <sub>
+<img
+src="chapter_2_files/image038.gif" width="19" height="23"></sub>(and of
+<img
+src="chapter_2_files/image014.gif" width="11" height="17">) for single
+crystals and polycrystals differ. The difference is a Taylor factor: it depends
+on the crystal structure
+and on the slip systems which are activated when the polycrystal deforms. For
+f.c.c. metals the appropriate Taylor factor <i>M<sub>s</sub></i> is 1.77; for
+the b.c.c. metals it is
+1.67 (Kocks, 1970) [12]. (They may be more familiar to the reader as the Taylor
+factors <i>M = </i>3.06 and 2.9, respectively, relating the critical resolved
+shear strength to tensile strength for f.c.c. and b.c.c. metals. Since <sub>
+<img src="chapter_2_files/image038.gif" width="19" height="23"></sub> and
+<img src="chapter_2_files/image014.gif" width="11" height="17"> are polycrystal
+shear strengths, the factors we use are less by the factor
+<font face="Times New Roman">&#8730;3</font>) For less
+symmetrical
+crystals the poly­crystal shear strength is again a proper average of the
+strengths of the active slip systems. These often differ markedly and it is reasonable
+to identify <sub><img src="chapter_2_files/image038.gif" width="19" height="23"></sub> for
+the polycrystal with that of the hardest of the slip systems (that is, we take
+<i>M<sub>s</sub></i>=1<i> </i>but
+use <sub>
+<img src="chapter_2_files/image038.gif" width="19" height="23"></sub> for the
+hard
+system). In calculating <sub><img
+src="chapter_2_files/image038.gif" width="19" height="23"></sub> or
+<img
+src="chapter_2_files/image014.gif" width="11" height="17"> from single
+crystal data, we have
+applied the appropriate Taylor factor.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber37">
+  <tr>
+    <td width="77%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Plasticity limited by phonon or electron drags">Plasticity
+limited by phonon or electron drags</a></b></p>
+
+    </td>
+    <td width="23%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Under
+conditions of explosive or shock load­ing, and in certain metal-forming
+and machining operations, the strain-rate can be large (&gt;10<sup>2</sup>/s). Then the
+interaction of a moving dislocation with phonons or electrons can limit its
+velocity. The strength of the interaction is measured by the <i>drag
+coefficient, B</i> (the reciprocal of the mobility <i>M</i>  of eqn. (2.4)):</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber13" height="50">
+  <tr>
+    <td width="85%" height="50">
+    <p align="center"> <sub><img src="chapter_2_files/image044.gif" width="49" height="37"></sub></td>
+    <td width="15%" height="50">&nbsp;</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>Values of <i>B 
+</i>lie, typically, between 10<sup>-5</sup> and 10<sup>-4</sup> Ns/m<sup>2</sup> (Klahn <i>et al., </i>1970) [13]. Combining this with eqn. (2.4) leads to the <i>rate-equation  for drag limited glide:</i></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber14" height="61">
+  <tr>
+    <td width="85%" height="61">
+    <p align="center"> 
+    <img border="0" src="chapter_2_files/image048.gif" width="107" height="48"></td>
+    <td width="15%" height="61">(2.13)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>c</i> 
+is a constant which includes the appropriate Taylor factor.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            To
+use this result it is necessary to know how <i><font face="Times New Roman">&#961;<sub>m</sub>/B</font></i> varies with stress and temperature.
+For solute­ drag, <i><font face="Times New Roman">&#961;<sub>m</sub></font></i> is<i> </i>well described by eqn.
+(2.3); but at the high strain-rates at which phonon drag dominates,<sub> </sub>
+<i><font face="Times New Roman">&#961;<sub>m</sub></font> </i>tends to a
+constant limiting value (Kumar <i>et al., </i>1968; Kumar and Kumble, 1969) [14, 15], so that
+<i><font face="Times New Roman">&#961;<sub>m</sub>/B</font> </i>is almost
+independent of stress and temperature. Then the strain-rate depends
+linearly on stress, and the deformation becomes (roughly) Newtonian-viscous:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber15" height="62">
+  <tr>
+    <td width="85%" height="62">
+    <p align="center"> 
+    <img border="1" src="chapter_2_files/image050.gif" width="92" height="48"></td>
+    <td width="15%" height="62">(2.14)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>C</i><sub> </sub>(s<sup>-1</sup>)<sub> </sub>is
+  a
+constant. Using the data of Kumar <i>et al. </i>(1968) [14] and Kumar and Kumble
+(1969) [15], we estimate <i>C</i><font face="Times New Roman"> &#8776; 5 x 10<sup>6 </sup>/s.</font> </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Drag-controlled
+plasticity does not appear on most of the maps in this book, which are
+truncated at strain-rate (1/s) below that at which it becomes important.
+But when high strain-rates are con­sidered (Chapter 17, Section 17.2), it
+appears as a dominant mechanism.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber38">
+  <tr>
+    <td width="81%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="The influence of alloying on dislocation glide">The
+influence of alloying on dislocation glide</a></b></p>
+
+    </td>
+    <td width="19%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><i>            </i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A
+solute </i>introduces a friction-like resistance to slip. It is caused by
+the interaction of the moving dislocations with stationary weak obstacles:
+single solute atoms in very dilute solutions, local con­centration fluctuations
+in solutions which are more concentrated. Their effect can be described by eqn.
+(2.9) with a larger value of <img
+src="chapter_2_files/image014.gif" width="11" height="17"> and a smaller value of 
+&#8710;<i>F </i>(Table
+2.1). This effect is superimposed on that of work-hardening. In
+presenting maps for alloys (Chapter 7) we have often used data for heavily
+deformed solid solutions; then solution strengthen­ing is masked by forest
+hardening. This allows us to use eqn. (2.9) unchanged.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><i>            </i>A
+<i>dispersion of strong particles of a second phase </i>blocks the glide motion
+of the dislocations. The particles in materials like <i>SAP  </i>(aluminium
+containing Al<sub>2</sub>0<sub>3</sub>), T-D Nickel (nickel containing
+ThO<sub>2</sub>—Chapter 7), or low-alloy steels (steels containing dis­persions
+of carbides—Chapter 8) are strong and stable. <i>A </i>gliding dislocation can
+move only by bowing between and by-passing them, giving a con­tribution
+to the flow strength which scales as the reciprocal of the particle spacing,
+and which has a very large activation energy (Table 2.1). Detailed calculations
+of this <i>Orowan strength </i>(e.g. Kocks <i>et al., </i>1975 [7]) lead to eqn. (2.9) with
+<sub>
+<img border="0" src="chapter_2_files/image053.gif" width="71" height="21"></sub> and
+<font face="Times New Roman">&#8710;<i>F </i></font>&#8805; 2<font face="Times New Roman">&#956;<i>b</i><sup>3</sup></font>. This activation
+energy is so large that it leads to a flow strength which is almost athermal,
+although if the alloy is worked sufficiently the yield strength will regain the
+temperature-dependence which characterizes forest hardening (Table 2.1).
+We have neglected here the possibility of thermally activated cross-slip
+at particles (Brown and Stobbs, 1971; Hirsch and Humphreys, 1970) [16, 17], which can relax work-hardening and thus lower the flow strength. To a first approximation, a strong disper­sion and a solid solution give additive contributions to the yield stress.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A <i>precipitate,
+</i>when finely dispersed, can be cut by moving dislocations. If the density of
+particles is high, then the flow strength is high (large
+<img src="chapter_2_files/image014.gif" width="11" height="17"><i> </i>but strongly
+temperature-dependent (low &#8710;<i>F:&nbsp; </i>Table 2.1). If the precipitate is
+allowed to coarsen it behaves increasingly like a dispersion of strong
+particles.</p>
+
+<p class=MsoNormal style='margin-right:-4.25pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-right:-4.25pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber39">
+  <tr>
+    <td width="73%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="2.3 MECHANICAL TWINNING">2.3 MECHANICAL
+TWINNING</a></b></p>
+
+    </td>
+    <td width="27%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Twinning
+is an important deformation mechan­ism at low temperatures in h.c.p. and b.c.c.
+metals and some ceramics. It is less important in f.c.c. metals, only oc­curring
+at very low temperature. Twinning is a variety of dislocation glide (Section
+2.2) involving the motion of partial, instead of complete, dislocations. The
+kinetics of the process, however, often indicate that nucleation, not
+propagation, determines the rate of flow. When this is so, it may still be
+possible to describe the strain-rate by a <i>rate-equation for
+twinning,  </i>taking the form:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber16" height="65">
+  <tr>
+    <td width="85%" height="65">
+    <p align="center"> 
+    <img border="0" src="chapter_2_files/image055.gif" width="201" height="53"></td>
+    <td width="15%" height="65">(2.15)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>Here
+<font face="Times New Roman">&#8710;<i>F<sub>N</sub></i></font><i> </i>is the
+activation free energy to nucleate a twin without the aid of external stress;
+<sub>
+<img border="0" src="chapter_2_files/image057.gif" width="17" height="24"></sub> is a constant with
+dimensions of strain-rate which in­cludes the density of available
+nucleation sites and the strain produced per successful nucleation; <sub>
+<img src="chapter_2_files/image058.gif" width="16" height="21"></sub>is the stress
+required to nucleate twinning in the absence of thermal activation. The
+temperature-dependence of <font face="Times New Roman">&#8710;<i>F<sub>N</sub></i></font><i> </i>must be included to explain
+the observation that the twinning stress may decrease with decreasing
+temperature (Bolling and Richman, 1965) [18].</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+rate-equation for twinning is so uncertain that we have not included it
+in computing the maps shown here. Instead, we have indicated on the data­plots
+where twinning is observed. The tendency of f.c.c. metals to twin increases with
+decreasing stack­ing fault energy, being greatest for silver and com­pletely
+absent in aluminium. All the b.c.c. and h.c.p. metals discussed below twin at
+sufficiently low temperature.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber40">
+  <tr>
+    <td width="83%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="2.4 HIGH-TEMPERATURE PLASTICITY: POWER-LAW CREEP">2.4 HIGH-TEMPERATURE
+PLASTICITY: POWER-LAW
+CREEP</a></b></p>
+
+    </td>
+    <td width="17%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At high
+temperatures, materials show rate­dependent plasticity, or <i>creep. </i>Of
+course, the mechanisms described in the previous sections lead, even at low
+temperatures, to a flow strength which depends to some extend on strain-rate.
+But above 0.3<i>T<sub>M</sub></i> for
+pure metals, and about 0.4<i>T<sub>M</sub></i> for alloys and most ceramics, this
+dependence on strain-rate becomes much stronger. If it is expressed by an
+equation of the form</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber17" height="65">
+  <tr>
+    <td width="85%" height="65">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image061.gif" width="73" height="52"></td>
+    <td width="15%" height="65">(2.16)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>then, in this
+high-temperature regime, n has a value between 3 and 10, and (because of
+this) the regime is called <i>power-law creep. </i>In this section we
+consider steady-state creep only; primary creep is discussed in Chapter
+17, Section 17.1.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber41">
+  <tr>
+    <td width="75%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Power-law creep by glide alone">Power-law
+creep by glide alone</a></b></p>
+
+    </td>
+    <td width="25%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If
+the activation energy &#8710;<i>F&nbsp;</i>in eqn. (2.9) or &#8710;<i>F<sub>p</sub> </i>in eqn.
+(2.12) is small, then thermally-activated glide can lead to creep-like
+behavior above 0.3<i>T<sub>M</sub></i>.
+<i> </i>The activation of dislocation segments over obstacles leads to a drift
+velocity which, in the limit of very small &#8710;<i>F</i>, approaches a linear dependence on
+stress. This, coupled with the <sub>
+<img border="0" src="chapter_2_files/image063.gif" width="23" height="25"></sub> stress-dependence of the mobile dislocation density (eqn. (2.3)) leads to a behavior which resembles power-law
+creep with <img src="chapter_2_files/image064.gif" width="35" height="16">.
+This <i>glide-controlled creep  </i>may be important in ice (Chapter 16)
+and in certain ceramics (Chapters 9 to 15), and perhaps, too, in metals below 
+0.5<i>T<sub>M</sub></i>.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+maps of later chapters include the predictions of the glide mechanisms
+discussed in Section 2.2; to that extent, glide-controlled creep is included
+in our treatment. But our approach is unsatisfactory in that creep normally
+occurs at or near steady state, not at constant structure—and eqns. (2.9) and
+(2.12) describe only this second condition. A proper treatment of glide-controlled
+creep must include a description of the balanced hardening-and-recovery
+processes which permit a steady state. Such a treat­ment is not yet available.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber42">
+  <tr>
+    <td width="79%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Power-law creep by climb-plus-glide">Power-law
+creep by climb-plus-glide</a></b></p>
+
+    </td>
+    <td width="21%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At
+high temperatures, dislocations acquire a new degree of freedom: they can climb
+as well as glide (Fig. 2.4). If a gliding dislocation is held up by dis­crete
+obstacles, a little climb may release it, allowing it to glide to the next set
+of obstacles where the process is repeated. The glide step is responsible for
+almost all of the strain, although its average velocity is determined by the
+climb step. Mech­anisms which are based on this climb-plus-glide
+sequence we refer to as <i>climb-controlled creep </i>(Weertman, 1956,
+1960, 1963) [19-21]. The important feature which distinguishes these mechanisms from those of earlier sections is that the rate-controlling process, at an atomic level, is the diffusive motion of single ions or vacancies to or from the climbing dislocation, rather than the activated glide of the dislocation itself.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.4.gif" width="380" height="247"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig. 2.4.
+Power-law creep involving cell-formation by climb. Power-law
+creep limited by glide processes alone is also possible.</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Above 
+0.6<i>T<sub>M</sub></i> climb
+is generally <i>lattice-diffusion controlled. </i>The velocity
+<font face="Times New Roman">&#965;</font><i><sub>c</sub></i> at which an edge
+disloca­tion climbs under a local normal stress an acting parallel to its
+Burgers' vector is (Hirth and Lothe, 1968) [22]:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber18" height="50">
+  <tr>
+    <td width="85%" height="50">
+    <p align="center"><sub><img src="chapter_2_files/image068.gif" width="88" height="37"></sub></td>
+    <td width="15%" height="50">(2.17)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>D<sub><font face="Times New Roman">&#965;</font></sub>
+</i>is the lattice
+diffusion coefficient and <font face="Times New Roman">&#8486;</font> the atomic or ionic volume. We obtain
+the basic climb-controlled creep equation by supposing that
+<font face="Times New Roman">&#963;<sub>n</sub></font> is proportional to
+the applied stress <font face="Times New Roman">&#963;<sub>s</sub></font>, and that the average velocity of the
+dislocation, <img src="chapter_2_files/image072.gif" width="13" height="16">,
+is proportional to the rate at which it climbs, <font face="Times New Roman">&#965;</font><i><sub>c</sub></i>. Then, combining eqns. (2.2), (2.3)
+and (2.17) we obtain:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber19" height="69">
+  <tr>
+    <td width="85%" height="69">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image073.gif" width="135" height="55"></td>
+    <td width="15%" height="69">(2.18)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where we have
+approximated <font face="Times New Roman">&#8486;</font> by
+<i>b</i><sup>3</sup>, and
+incorpor­ated all the constants of proportionality into the dimensionless
+constant,<i> A<sub>1</sub></i>,
+of order unity.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Some
+materials obey this equation: they exhibit proper-law creep with a power
+of 3 and a constant <i>A<sub>1</sub></i> of about 1 (see Brown and Ashby,
+1980a [23]). But they are the exceptions rather than the rule. It appears that the local normal stress,
+<font face="Times New Roman">&#963;<sub>n</sub></font>, is not neces­sarily
+proportional to <font face="Times New Roman">&#963;<sub>s</sub></font> implying
+that dislocations may be moving in a cooperative manner which con­centrates
+stress or that the average dislocation velocity or mobile density varies in a
+more com­plicated way than that assumed here. Over a limited range of stress,
+up to roughly 10<sup>-3</sup><font face="Times New Roman">&#956;</font>,
+experiments are well described by a modification of eqn. (2.18) (Mukherjee <i>et
+al., </i>1969) [24] with an exponent, <i>n, </i>which varies from 3 to about 10:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber20" height="70">
+  <tr>
+    <td width="85%" height="70">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image077.gif" width="140" height="56"></td>
+    <td width="15%" height="70">(2.19)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Present
+theoretical models for this behavior are unsatisfactory. None can convincingly
+explain the observed values of <i>n; </i>and the large values of the
+dimensionless constant <i>A<sub>2</sub></i> (up to 10<sup>15</sup>) strongly suggest that some important
+physical quantity is missing from the equation in its present form (Stocker and
+Ashby,1973; Brown and Ashby,1980) [23, 25]. But it <i>does </i>provide a good description of experi­mental observations, and in so far as it is a generalization of eqn. (2.18), it has some basis in a physical model.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            In
+this simple form, eqn. (2.19) is incapable of explaining certain experimental
+facts, notably an increase in the exponent <i>n </i>and a drop in the activa­tion
+energy for creep at lower temperatures. To do so it is necessary to assume that
+the transport of matter via <i>dislocation core diffusion </i>contributes sig­nificantly
+to the overall diffusive transport of matter, and—under certain circumstances—becomes
+the dominant transport mechanism (Robinson and Sherby, 1969) [26]. The contribution of core diffusion is included by defining an effective diffusion coefficient (following Hart, 1957 [27] and Robinson and Sherby, 1969 [26]):</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber21" height="39">
+  <tr>
+    <td width="85%" height="39">
+    <p align="center"><sub><img src="chapter_2_files/image080.gif" width="131" height="21"></sub></td>
+    <td width="15%" height="39">&nbsp;</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>D<sub>c</sub> is </i>the core
+diffusion coefficient, and <i>f<sub><font face="Times New Roman">&#965;</font></sub></i> and
+<i>f<sub>c</sub></i> are the fractions of atom sites
+associated with each type of diffusion. The value off is essentially unity. The
+value of <i>f<sub>c</sub></i> is
+determined by the disloca­tion density, <i><font face="Times New Roman">&#961;</font></i>:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber22" height="39">
+  <tr>
+    <td width="85%" height="39">
+    <p align="center"> <sub><img src="chapter_2_files/image084.gif" width="61" height="20"></sub></td>
+    <td width="15%" height="39">&nbsp;</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>a<sub>c</sub></i> is the cross-sectional
+area of the dislocation core in which fast diffusion is taking place. Measure­ments
+of the quantity <i>a<sub>c</sub>D<sub>c</sub> </i>have
+been reviewed by Balluffi (1970) [28]: the diffusion enhancement varies with
+dislocation orientation (being perhaps 10 times larger for edges than for screws),
+and with the degree of dissociation and therefore the arrangement of the dislocations.
+Even the activation energy is not constant. But in general, <i>D<sub>c</sub> </i>is
+about
+equal to <i>D<sub>b</sub></i> (the
+grain boundary diffusion coefficient), if <i>a<sub>c</sub></i> is taken to
+be 2<font face="Times New Roman">&#948;<sup>2</sup></font> (where
+<font face="Times New Roman">&#948;</font> is the
+effective boundary thickness). By using the common experimental observations<a href="#asterik2"><strong>*</strong></a> that
+<font face="Times New Roman"><i>&#961;</i> &#8776; 10/<i>b</i><sup>2</sup> (<i>&#963;<sub>s</sub></i>/<i>&#956;</i>)<sup>2</sup></font> (eqn.
+2.3), the
+effective diffusion coefficient becomes:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber23" height="65">
+  <tr>
+    <td width="85%" height="65">
+    <p align="center"><sub><img src="chapter_2_files/image091.gif" width="212" height="48"></sub></td>
+    <td width="15%" height="65">(2.20)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:-4.1pt;text-align:justify;line-height:
+24.0pt'>When inserted into eqn. (2.19), this gives the <i>rate­ equation for
+power-law creep</i><a href="#cross"><strong>†</strong></a>:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber24" height="62">
+  <tr>
+    <td width="85%" height="62">
+    <p align="center">
+    <img border="1" src="chapter_2_files/image092.gif" width="165" height="48"></td>
+    <td width="15%" height="62">(2.21)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Eqn.
+(2.21) is really two rate-equations. At high temperatures and low
+stresses, lattice diffusion is dominant; we have called the resulting field <i>high­temperature
+creep </i>(“H.T. creep”). At lower tempera­tures, or higher stresses, core
+diffusion becomes dominant, and the strain rate varies as <sub>
+<img src="chapter_2_files/image093.gif" width="35" height="24"></sub> instead of <sub>
+<img src="chapter_2_files/image094.gif" width="20" height="24"></sub>; this field
+appears on the maps as low­<i>temperature creep </i>(“L.T. creep”).</p>
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>*<a name="asterik2"></a> The observations
+    of Vandervoort (1970) </b><b>[32]</b><b>, for example, show that
+<font face="Times New Roman"><i>&#961;</i> </b>&#8776;<b> &#946;/<i>b</i><sup>2</sup> (<i>&#963;<sub>s</sub></i>/<i>&#956;</i>)</b></font><b> for
+    tungsten in the creep regime.</b></p>
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>&nbsp;</b></p>
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>†<a name="cross"></a> Eqn.
+    (2.21) is equally written in terms of the tensile stress and strain-rate.
+    Our constant <i>A</i><sub>2</sub> (which
+    relates shear stress to shear strain-rate) is related to the equiva­lent
+    constant <i>A</i>  which appears in tensile forms of this equation by <sub> <img border="0" src="chapter_2_files/image099.gif" width="101" height="33"></sub>.
+    For further discussion see Chapter 4. The later tabulations of data list
+    the tensile constant, <i>A</i>.</b></p>
+<p class=MsoNormal style='margin-right:-4.1pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber43">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='margin-right:-4.1pt;text-align:justify;line-height:
+24.0pt'><b><a name="Harper-Dorn creep">Harper-Dorn creep</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There
+is experimental evidence, at sufficiently low stresses, for a dislocation creep
+mechanism for which <sub><img
+src="chapter_2_files/image095.gif" width="12" height="19"></sub> is proportional
+to <i><font face="Times New Roman">&#963;<sub>s</sub></font></i>. The effect
+was
+first noted in aluminium by Harper and Dorn (1957) [29] and Harper <i>et al. </i>(1958)
+[30]: they observed linear­viscous creep, at stresses below 5 x10<sup>-6</sup>
+<i>
+<font face="Times New Roman">&#956;</font></i>, but at
+rates much higher than those possible by diffusional flow (Section 2.5). Similar
+behavior
+has been ob­served in lead and tin by Mohamed <i>et al. </i>(1973) [31]. The
+most
+plausible explanation is that of climb­ controlled creep under conditions such
+that the dislocation density does not change with stress. Mohamed <i>et al. </i>(1973)
+[31] summarize data showing a constant, low dislocation density of about 10<sup>8 </sup>/m<sup>2</sup> in the Harper-Dorn
+creep range. Given this con­stant density, we obtain a rate-equation by
+com­bining eqns. (2.2) and (2.17), with&nbsp; <sub>
+<img
+src="chapter_2_files/image101.gif" width="55" height="20"></sub>, to give:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber25">
+  <tr>
+    <td width="86%">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image102.gif" width="156" height="45"></td>
+    <td width="14%">(2.22)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>This is
+conveniently rewritten as:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber26" height="56">
+  <tr>
+    <td width="86%" height="56">
+    <p align="center">
+    <img border="1" src="chapter_2_files/image103.gif" width="165" height="45"></td>
+    <td width="14%" height="56">(2.23)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>A<sub>HD
+</sub></i>=<font face="Times New Roman"><i> &#961;<sub>m</sub>&#937;b</i></font> is a dimensionless
+constant.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Harper-Dorn
+creep is included in the maps for aluminium and lead of Chapter 4, using the
+experi­mental value for <i>A<sub>HD</sub></i> of 5 x 10<sup>-11</sup> for aluminium (Harper <i>et al., </i>1958)
+[30] and of 1.2 x 10<sup>-9</sup> for lead (Mohamed
+<i>et al., </i>1973) [31]. They are consistent with the simple theory given above if
+<font face="Times New Roman"><i>&#961; = </i>10<sup>8 </sup>- 10<sup>9</sup>/m<sup>2</sup></font>. The field only
+appears when the diffusional creep fields are suppressed by a large grain size.
+Harper-Dorn creep is not shown for other materials because of lack of data.</p>
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber44">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'><b><a name="Power-law breakdown">Power-law breakdown</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At high
+stresses (above about 10<sup>-3 </sup><i><font face="Times New Roman">&#956;</font></i>), the simple power-law breaks
+down: the measured strain-rates are greater than eqn. (2.21) predicts.
+The process is evidently a transition from climb-controlled to glide-controlled
+flow (Fig. 2.5). There have been a number of attempts to describe it in an
+empirical way (see, for example, Jonas <i>et al., </i>1969 [33]). Most lead to a rate-equation of the form:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber27" height="63">
+  <tr>
+    <td width="86%" height="63">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image109.gif" width="188" height="49"></td>
+    <td width="14%" height="63">(2.24)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>or the
+generalization of it (Sellars and Tegart, 1966 [34]; Wong and Jonas, 1968 [35]):</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber28" height="64">
+  <tr>
+    <td width="86%" height="64">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image110.gif" width="205" height="49"></td>
+    <td width="14%" height="64">(2.25)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>which at low
+stresses (<font face="Times New Roman"><i>&#946;'&#963;<sub>s </sub></i>&lt; 0.8)</font> reduces
+to a simple power-law, while at high (<font face="Times New Roman"><i>&#946;'&#963;<sub>s
+</sub></i>&gt; 1.2)</font> it becomes an exponential (eqn.
+(2.4)).</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.5.gif" width="369" height="221"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig. 2.5.
+Power-law breakdown: glide contributes in­creasingly to the overall
+strain-rate.</b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Measurements
+of the activation energy <i>Q<sub>cr</sub> </i>in the power-law
+breakdown regime often give values which exceed that of self-diffusion.
+This is some­times taken to indicate that the recovery pro­cess differs from
+that of climb-controlled creep. Some of the difference, however, may
+simply re­flect the temperature-dependence of the shear modulus, which
+has a greater effect when the stress-dependence is greater (in the
+exponential region). A better fit to experiment is then found with:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber29" height="76">
+  <tr>
+    <td width="86%" height="76">
+    <p align="center"> 
+    <img border="0" src="chapter_2_files/image114.gif" width="235" height="59"></td>
+    <td width="14%" height="76">&nbsp;</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'>with <i><font face="Times New Roman">&#945;'=&#946;'&#956;<sub>0</sub></font></i>.
+In order to have an exact corres­pondence of this equation with the power-law
+eqn. (2.21) we propose the following <i>rate-equation for power-law
+creep and power-law breakdown­</i></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber30" height="66">
+  <tr>
+    <td width="86%" height="66">
+    <p align="center"> 
+    <img border="1" src="chapter_2_files/image116.gif" width="220" height="59"></td>
+    <td width="14%" height="66">(2.26)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'>where                           <sub>
+<img
+src="chapter_2_files/image117.gif" width="76" height="23"></sub> </p>
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'>and                              <sub>
+<img src="chapter_2_files/image118.gif" width="41" height="16"></sub></p>
+
+<p class=MsoNormal style='margin-right:-5.35pt;text-align:justify;line-height:
+24.0pt'>Eqn. (2.26) reduces identically to the power-law creep equation
+(2.21) at stresses below <i><font face="Times New Roman">&#963;<sub>s </sub></i>&#8776;<i> &#956;/&#945;'</i></font>. There are, however, certain
+difficulties with this formulation. The problem stems from the use of only two
+parameters, <i>n'</i> and <i>&#945;'</i>, to
+describe three quantities: <i>n'</i> describes the power-law; <i>&#945;'</i> prescribes the
+stress level at which the power-law breaks down; and <i>n' &#945;'</i>, describes the strength of
+the exponential stress-dependence. Lacking any physical model, it must be
+considered fortuitous that any set of <i>n'</i> and <i>&#945;'</i>, can correctly describe the behavior
+over a wide range of stresses.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            In
+spite of these reservations, we have found that eqn. (2.26) gives a good
+description of hot work­ing (power-law breakdown) data for copper and
+aluminium. Because we retain our fit to power-law creep, the value of <i>n'</i> is prescribed, and
+the only new adjustable parameter is <i>&#945;'</i>. This will be dis­cussed further in
+Chapter 4, and Chapter 17, Section 17.2, where values for <i>&#945;'</i>, are given.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.6.gif" width="392" height="254"></p>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:center;line-height:
+24.0pt'><b>Fig.2.6. Dynamic recrystallization replaces deformed by undeformed
+material, permitting a new wave of primary creep, thus accelerating the creep
+rate.</b></p>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'><b>&nbsp;</b></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber45">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="Dynamic recrystallization">Dynamic
+recrystallization</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At high
+temperatures (&#8805; 0.6 <i>T<sub>M</sub></i>) power-law
+creep may be accompanied by repeated waves recrystal­lization as shown in Fig.
+2.6 (Hardwick <i>et al., </i>1961 [36]; Nicholls and McCormick, 1970 [37]; Hardwick and Tegart, 1961 [38]; St<font face="Times New Roman">&#363;</font>we, 1965 [39]; Jonas <i>et al., </i>1969 [33]; Luton and Sellars,1969 [40]). Each wave removes or drastically changes the dislocation substructure, allowing a period of primary creep, so that the strain-rate (at constant load) oscillates by up to a factor of 10. The phenomenon has been extensively studied in Ni, Cu. Pb, Al and their alloys (see the references cited above), usually in torsion but it occurs in any mode of loading. It is known to occur in ceramics such as ice and 
+NaCl, and in both metals and ceramics is most pronounced in very pure samples and least pronounced in heavily alloyed samples containing a dispersion of stable particles.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            Dynamic
+recrystallization confuses the high­temperature, high-stress region of
+the maps. When it occurs the strain-rate is higher than that predicted by
+the steady-state eqn. (2.21), and the apparent activation energy and
+creep exponent may change also (Jonas <i>et al., </i>1969 [33]). The simplest physical pic­ture is that of repeated waves of primary creep, occurring with a frequency which depends on tem­perature and strain-rate, each wave following a primary creep law (Chapter 17, Section 17.1) and having the same activation energy and stress dependence as steady-state creep. But a satisfactory model, even at this level, is not yet available.</p>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accordingly, we adopt an empirical approach. The maps shown in Chapter
+1 and in Chapters 4 to 16, show a shaded region at high temperatures, labelled
+“dynamic recrystallization”. It is not based on a rate-equation (the
+contours in this region are derived from eqn. (2.21)), but merely shows the
+field in which dynamic recrystallization has been observed, or in which (by
+analogy with similar materials) it would be expected.</p>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber46">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'><b><a name="The influence of alloying on power-law creep">The influence of alloying on power-law creep</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>             </p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A <i>solid
+solution </i>influences creep in many ways. The lattice parameter, stacking
+fault energy, moduli and melting point all change. Diffusive transport now
+involves two or more atomic species which may move at different rates. Solute
+atoms interact with stationary and moving dislocations introduc­ing a friction
+stress for glide-controlled creep and a solute-drag which retards
+climb-controlled creep (see Hirth and Lothe, 1968 [22] for details of these interactions). If the alloy is ordered, a single moving dislocation generally disrupts the order; if they move in paired groups, order may be preserved, but this introduces new constraints to deformation (see Stoloff and Davies, 1967 [41]).</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The stress
+dependence of creep in solid solutions falls into two classes (Sherby and
+Burke, 1967 [42]; Bird <i>et al., </i>1969 [43]): those with a stress dependence of <i>n </i>= 4 to 7; and those with<i> 
+n</i><font face="Times New Roman"> &#8776;<i> </i>3</font>. The first class
+resembles the pure metals, and is referred to as “climb­controlled creep”. The
+second is referred to as “viscous-drag-controlled creep” and is
+believed to result from the limitation on dislocation velocity imposed by the
+dragging of a solute atmosphere, which moves diffusively to keep up with the
+dislocation. To a first approximation, both classes of creep behavior may be
+described by the power­law creep equation (eqn. (2.21)), with appropriate
+values of <i>n</i>, <i>A</i>, and diffusion coefficients. That is what is done
+here.</p>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The diffusion coefficient for vacancy diffusion, appropriate for climb-controlled
+creep in a two­component system, is:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber31" height="55">
+  <tr>
+    <td width="87%" height="55">
+    <p align="center"><sub><img src="chapter_2_files/image125.gif" width="127" height="41"></sub></td>
+    <td width="13%" height="55">(2.27)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>where <i>D<sub>A</sub> </i>and
+<i>D<sub>B</sub></i> are the tracer
+diffusion coefficients of components <i>A</i> and <i>B</i>. respectively, and <i>
+x<sub>A</sub> </i>and <i>x<sub>B</sub></i> are the respective
+atomic fractions (Herring,1950 [44]; Burton and Bastow, 1973 [45]). The appropriate dif­fusion coefficient for viscous-drag-controlled creep is the chemical interdiffusivity of the alloy:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber32" height="68">
+  <tr>
+    <td width="87%" height="68">
+    <p align="center">
+    <img border="0" src="chapter_2_files/image130.gif" width="229" height="53"></td>
+    <td width="13%" height="68">(2.28)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='margin-right:-4.4pt;text-align:justify;line-height:
+24.0pt'>where <font face="Times New Roman"><i>&#947;<sub>A</sub></i> </font>is
+the activity coefficient of the <i>A</i> species. (This average applies because
+the solute atmosphere­diffuses with the dislocation by exchanging position with
+solvent atoms in the dislocation path.)</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low-temperature,
+core-diffusion, limited creep should occur in solid solutions by the same
+mech­anism as in pure metals. The diffusion coefficient must be changed,
+however, to take into account the solute presence, in the way described by eqn.
+(2.27). In general, the solute concentration at the disloca­tion core will
+differ from that in the matrix, and core diffusion will be accordingly
+affected; but the lack of data means that diffusion rates have to be estimated
+(Brown and Ashby, 1980b [46]; see also Chapters 7 and 8). Solid solutions exhibit power-law breakdown behavior at high stresses, and Harper-Dorn creep at low stresses.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            A <i>dispersion
+of strong particles of a second phase </i>blocks dislocation glide and climb,
+helps to stabilize a dislocation substructure (cells), and may suppress dynamic
+recrystallization. The stress exponent n is found to be high for dispersion-hardened
+alloys: typically 7 or more; and the activation energy, too, is often larger
+than that for self-diffusion. Creep of dispersion-hardened alloys
+is greatly influenced by thermomechanical history. Cold working in­troduces
+dislocation networks which are stabilized by the particles, and which may not
+recover, or be removed by recrystallization, below 0.8 or 0.9 <i>T<sub>M</sub></i>. The creep behavior of the
+cold-worked material then differs greatly from that of the recrystallized
+material, and no steady state may be possible. On recrystallization, too, the
+particles can stabilize an elongated grain structure which is very resistant to
+creep in the long direction of the grains.</p>
+
+<p class=MsoNormal style='margin-right:-6.15pt;text-align:justify;line-height:
+24.0pt'>            Early theories of creep in these alloys (Ansell, 1968 [47]) were unsatisfactory in not offering a physical explanation for the high values of <i>
+n </i>and <i>Q</i>.The work of Shewfelt and Brown (1974, 1977) [48, 49] has now established that creep in dispersion-hardened single crystals is controlled by climb over the particles. But a satisfactory model for polycrystals (in which grain boundary sliding concentrates stress in a way which helps dislocations overcome the dispersion) is still lacking.</p>
+
+<p class=MsoNormal style='margin-right:-6.15pt;text-align:justify;line-height:
+24.0pt'>            Most <i>precipitates, </i>when fine, are not stable at
+creep temperatures, but may contribute to short­term creep strength: alloys
+which precipitate con­tinuously during the creep life often have good creep
+strength. When coarse, a precipitate behaves like a dispersion.</p>
+
+<p class=MsoNormal style='margin-right:-6.15pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-right:-6.15pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber47">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='margin-right:-6.15pt;text-align:justify;line-height:
+24.0pt'><b><a name="2.5 DIFFUSIONAL FLOW">2.5 DIFFUSIONAL FLOW</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A stress
+changes the chemical potential, <font face="Times New Roman">&#966;</font>, of atoms at the surfaces of grains
+in a polycrystal. A hydrostatic pressure changes <font face="Times New Roman">&#966;
+</font>everywhere by the same amount so that
+no potential gradients appear; but a stress
+field with a deviatoric component changes <font face="Times New Roman">&#966;</font> on some grain surfaces more than on
+others, introducing a potential gradient, <font face="Times New Roman">&#8710;&#966;</font>. At high temperatures
+this gradient induces a diffusive flux of matter through and around the surfaces
+of the grains
+(Fig. 2.7), and this flux leads to strain, provided it is coupled with sliding
+displacements in the plane of the boundaries themselves. Most models of the
+process (Nabarro, 1948; Herring, 1950; Coble,
+1963; Lifshiftz, 1963; Gibbs. 1965; Rag and Ashby, 1971) assume that it is
+diffusion-controlled. They are in substantial agreement in predicting a
+rate-equation: if both lattice and grain boundary diffusion are permitted, the
+rate-equation for diffusional flow is:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber50" height="54">
+  <tr>
+    <td width="85%" height="54">
+    <p align="center"><sub>
+    <img
+width=111 height=43 src="chapter_2_files/image138.gif" border="1"></sub></td>
+    <td width="15%" height="54">(2.29)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber51" height="69">
+  <tr>
+    <td width="5%" height="69">
+    where </td>
+    <td width="75%" height="69">
+    <p align="center">&nbsp; <img border="0" src="chapter_2_files/image139.gif"></td>
+    <td width="105%" height="69">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2.30)</td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>Here <i>d </i>
+is the grain size, <i>D<sub>b</sub></i> is the boundary diffusion coefficient 
+and <i><font face="Times New Roman">&#948;</font></i> the 
+effective thickness of the boundary.</p>
+
+<p class=MsoNormal style='text-align:left;line-height:24.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Like the equation for climbed-controlled creep, it is really two equations. At 
+high temperatures, <i>lattice diffusion</i> controls the rate; the resulting 
+flow is known as Nabarro-Herring creep and its rate scales as <i>D<sub><font face="Times New Roman">&#965;</font></sub>/d</i><sup>2</sup>. 
+At lower temperatures, <i>grain-boundary diffusion</i> takes over; the flow is 
+then called Coble creep, and scales as <i>D<sub>b</sub>/d</i><sup>3</sup>.</p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>
+<img border="0" src="DefMechPic/Chap2/fig2.7.gif" width="338" height="233"></p>
+
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'><b>Fig 2.7. 
+Diffusional flow by diffusional transport through and round the grains. The 
+strain-rate may be limited by the rate of diffusion or by that of an interface 
+reaction.</b></p>
+<p class=MsoNormal style='text-align:center;line-height:24.0pt'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            This
+equation is an oversimplification; it neglects the kinetics involved in
+detaching vacancies from grain-boundary sites and reattaching them again,
+which may be important under certain conditions. Such behavior can become
+important in alloys, particularly those containing a finely dispersed second
+phase. Pure metals are well described by eqn. (2.29), and it is used, in this
+form, to construct most of the maps of subsequent sections. Interface reaction
+control, and its influence on the maps, is dealt with further in Chapter 17,
+Section 17.3.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber48">
+  <tr>
+    <td width="84%">
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><b>
+<a name="INFLUENCE OF ALLOYING ON DIFFUSIONAL FLOW">INFLUENCE
+OF ALLOYING ON DIFFUSIONAL
+FLOW</a></b></p>
+
+    </td>
+    <td width="16%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A solid
+solution </i>may influence diffusional flow by changing the diffusion
+coefficient (Herring, 1950 [44]). When lattice diffusion is dominant, the coefficient
+<i>D<sub><font face="Times New Roman">&#965;</font></sub></i> should be replaced
+by <sub> <img border="0" src="chapter_2_files/image223.gif" width="20" height="20"></sub> (eqn.
+(2.27)). When boundary diffusion is dominant a similar combined ­coefficient
+should be used, but lack of data makes this refinement impossible at present.
+More impor­tant, the solid solution can impose a drag on boundary dislocations
+slowing the rate of creep; and solute redistribution during diffusional flow
+can lead to long transients. These effects are discussed further in Chapter 17,
+Section 17.3.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            There
+is evidence that a <i>dispersion of a second phase </i>influences the way in
+which a grain boundary acts as a sink and source of vacancies, introducing a
+large interface-reaction barrier to diffusion and a threshold stress
+below which creep stops. Its influence is illustrated in Chapter 7, and
+discussed in Chapter 17, Section 17.3.</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>            The
+influence of a <i>precipitate </i>on diffusional flow is not documented. This
+sort of creep is normally observed at high temperatures (&gt; 0.5 T<sub><i>M</i></sub>) when most precipitates will
+dissolve or coarsen rapidly.</p>
+
+<p class=MsoNormal style='margin-right:-4.6pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-right:-4.6pt;text-align:justify;line-height:
+24.0pt'>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber49">
+  <tr>
+    <td width="50%">
+
+<p class=MsoNormal style='margin-right:-4.6pt;text-align:justify;line-height:
+24.0pt'><b><a name="References for Chapter 2">References for Chapter 2</a></b></p>
+
+    </td>
+    <td width="50%">
+    <p align="right"><a href="#CHAPTER 2">&lt;Back to Top&gt;</a></td>
+  </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:24.0pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>1.         Tyson, W.R., <i>Theoretical Strength of Perfect Crystals.</i> Phil. Mag, 1966. <b>14</b>:
+p. 925-936.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>2.         Kelly,
+A.,<i> Strong Solids</i>. 1966: Oxford University Press.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>3.         MacKenzie,
+J.K. 1959, Bristol University.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>4.         Orowan,
+E. <i>Problems of plastic gliding</i>. in <i>Proc. Phys. Soc.</i> 1940.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>5.         Argon,
+A.S., <i>Internal stresses arising from the interaction of mobile dislocation.</i>
+Scripta Metallurgica (before 1990), 1970. <b>4</b>: p. 1001.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>6.         Evans,
+A.G. and R.D. Rawlings, <i>Thermally activated deformation of crystalline
+materials.</i> Phys. Stat. Sol., 1969. <b>34</b>: p. 9-31.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>7.         Kocks,
+U.F., A.S. Argon, and M.F. Ashby, Prog. Mat. Sci., 1975. <b>19</b>: p. 1.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>8.         de
+Meester, B., et al., <i>Thermally activated deformation in crystalline solids</i>,
+in<i> Rate Processes in Plastic Deformation</i>, J.C.M.L.a.A.K. Mukherjee,
+Editor. 1973, A.S.M. p. 175-226.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>9.         Guyot,
+P. and J.E. Dorn, <i>A Critical Review of the Peierls Mechanism.</i> Can. J.
+Phys., 1967. <b>45</b>: p. 983-1016.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>10.       Raffo,
+P.L., <i>Yielding and fracture in tungsten and tungsten-rhenium alloys.</i> J.
+Less Common Metals, 1969. <b>17</b>: p. 133-49.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>11.       Ashby,
+M.F., <i>A first report on deformation-mechanism maps.</i> Acta Metallurgica
+(pre 1990), 1972. <b>20</b>: p. 887.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>12.       Kocks,
+U.F., <i>The relation between polycrystal deformation and single-crystal
+deformation.</i> Met. Trans., 1970. <b>1</b>: p. 1121.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>13.       Klahn,
+D., A.K. Mukherjee, and J.E. Dorn. in <i>Second International Conference on the
+Strength of Metals and Alloys</i>. 1970. Asilomar, California: ASM.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>14.       Kumar,
+A., F.E. Hauser, and J.E. Dorn, <i>Viscous drag on dislocations in aluminum at
+high strain rates.</i> Acta Metallurgica (pre 1990), 1968. <b>16</b>: p. 1189.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>15.       Kumar,
+A. and R.C. Kumble, <i>Viscous drag on dislocations at high strain rates in
+copper.</i> Journal of Applied Physics, 1969. <b>40</b>: p. 3475-80.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>16.       Brown,
+L.M. and W.M. Stobbs, <i>The Work-hardening of Copper-Silica: I. A Model Based
+on Internal Stresses, with no Plastic relaxation.</i> Philosophical Magazine(
+before 1978), 1971. <b>23</b>: p. 1185.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>17.       Hirsch,
+P.B. and F. Humphries. in <i>Proc. R. Soc.</i> 1970.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>18.       Bolling,
+G.F. and R.H. Richman, <i>Continual mechanical twinning.</i> Acta Metallurgica
+(pre 1990), 1965. <b>13</b>: p. 709, 723.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>19.       Weertman,
+J., <i>Creep of polycrystalline aluminium as determined from strain rate tests.</i>
+J. Mech. Phys. Solids, 1956. <b>4</b>: p. 230-234.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>20.       Weertman,
+J., <i>Creep of indium, lead and some of their alloys with various other
+metals.</i> Trans. AIME, 1960. <b>218</b>: p. 207-18.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>21.       Weertman,
+J., <i>Discussion of: &quot; An Experimental relation defining the stress
+dependence of minimun creep rate in metals&quot;.</i> Trans. AIME, 1963. <b>227</b>:
+p. 1475-76.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>22.       Hirth,
+J.P. and J. Lothe, <i>Theory of Dislocations.</i> 1968: McGraw-Hill. 435.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>23.       Brown,
+A.M. and M.F. Ashby, <i>Correlations for diffusion constants.</i> Acta
+Metallurgica (pre 1990), 1980a. <b>28</b>: p. 1085.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>24.       Mukherjee,
+A.K., J.E. Bird, and J.E. Dorn, <i>Experimental correlation for
+high-temperature creep.</i> Trans. ASM, 1969. <b>62</b>: p. 155-179.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>25.       Stocker,
+R.L. and M.F. Ashby, <i>On the empirical constants in the Dorn equation.</i>
+Scripta Met., 1973. <b>7</b>: p. 115-20.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>26.       Robinson,
+S.L. and O.D. Sherby, <i>Mechanical behaviour of polycrystalline tungsten at
+elevated temperature.</i> Acta Met., 1969. <b>17</b>: p. 109.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>27.       Hart,
+E.W., <i>On the role of dislocations in bulk diffusion.</i> Acta Metallurgica
+(pre 1990), 1957. <b>5</b>: p. 597.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>28.       Balluffi,
+R.W., <i>On Measurement of Self-Diffusion rates along Dislocations in F.C.C.
+Metals.</i> Phys. Stat. Sol., 1970. <b>42</b>: p. 11-34.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>29.       Harper,
+J.G. and J.E. Dorn, <i>Viscous creep of aluminum near its melting temperature.</i>
+Acta Metallurgica (pre 1990), 1957. <b>5</b>: p. 654.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>30.       Harper,
+J.G., L.A. Shepard, and J.E. Dorn, <i>Creep of aluminum under extremely small
+stresses.</i> Acta Metallurgica (pre 1990), 1958. <b>6</b>: p. 509.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>31.       Mohamed,
+F.A., K.L. Murty, and J.W. Morris, Jr. in <i>The John E. Dorn Memorial
+Symposium.</i> 1973. Cleveland, Ohio: ASM.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>32.       Vandervoort,
+R.R., <i>The creep behavior of W-5 Re.</i> Met. Trans., 1970. <b>1</b>: p. 857.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>33.       Jonas,
+J.J., C.M. Sellers, and W.J.M. Tegart, Met. Rev., 1969. <b>14</b>: p. 1-24.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>34.       Sellars,
+C.M. and W.J.M. Tegart, <i>La relation entre la resistance et la structure dans
+la deformation a chaud.</i> Mem. Sci. Rev. Met., 1966. <b>63</b>: p. 731-46.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>35.       Wongi,
+W.A. and J.J. Jonas, <i>Aluminium extrusion as a thermally activated process.</i>
+Trans. AIME, 1968. <b>242</b>: p. 2271-2280.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>36.       Hardwick,
+D., C.M. Sellars, and W.J.M. Tegart, <i>The Occurence of Recrystallization
+During High-Temerature Creep.</i> J. Inst. Met., 1961-62. <b>90</b>: p. 21-23.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>37.       Nicholls,
+J.H. and P.G. McCormick, <i>Dynamic recrystallization in lead.</i> Met. Trans.,
+1970. <b>1</b>: p. 3469.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>38.       Hardwick,
+D. and W.J. McG Tegart, <i>Structural changes during the deformation of copper,
+aluminium and nickel at high temperatures and strain rate.</i> J. Inst.  Met.,
+1961-62. <b>90</b>: p. 17-21.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>39.       Stuwe,
+H.P., <i>Dynamische erholung bei der warmverformung.</i> Acta Met., 1965. <b>13</b>:
+p. 1337.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>40.       Luton,
+M.J. and C.M. Sellars, <i>Dynamic recrystallization in nickel and nickel-iron
+alloys during high temperature deformation.</i> Acta Metallurgica (pre 1990),
+1969. <b>17</b>: p. 1033.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>41.       Stoloff,
+N.S. and R.G. Davies, Prog. Mat. Sci., 1967. <b>13</b>: p. 1.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>42.       Sherby,
+O.D. and P.M. Burke, <i>Mechanical behavior of crystalline solids at elevated
+temperature.</i> Prog. Mat. Sci., 1967. <b>13</b>: p. 325.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>43.       Bird,
+J.E., A.K. Mukherjee, and J.F. Dorn, <i>Correlations Between High-Temperature
+Creep Behaviour and Structure</i>, D.G.a.R. Brandon, A., Editor. 1969, Haifa
+University Press, Israel. p. 255-341.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>44.       Herring,
+C., <i>Diffusional viscosity of a polycrystalline solid.</i> Journal of Applied
+Physics, 1950. <b>21</b>: p. 437.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>45.       Burton,
+B. and B.D. Bastow, <i>The diffusional creep of binary copper alloys.</i> Acta
+Metallurgica (pre 1990), 1973. <b>21</b>: p. 13.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>46.       Brown,
+A.M. and M.F. Ashby, <i>On the power-law creep equation.</i> Scripta
+Metallurgica (before 1990), 1980b. <b>14</b>: p. 1297.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>47.       Ansell,
+G.S., <i>The mechanism of dispersion strenghtening</i>, in <i>Oxide Dispersion
+Strengthening.</i> 1968, AIME, Gordon &amp; Breach. p. 61-141.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>48.       Shewfelt,
+R.S.W. and L.M. Brown, <i>High-temperature strength of dispersion-hardened
+single cryssitals- I. Experiemntal results.</i> Phil Mag., 1974. <b>30</b>: p.
+1135-45.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>49.       Shewfelt,
+R.S.W. and L.M. Brown, <i>High-temperature strength of dislocation-hardened
+single crystals-II. Theory.</i> Phil. Mag., 1977. <b>35</b>: p. 945-62.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in' align="center">
+<a href="#CHAPTER 2">&lt;Back to Top&gt;</a></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.5in'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

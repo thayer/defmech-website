@@ -1,0 +1,248 @@
+<HTML>
+<BODY bgColor="white" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" onLoad="transferValues (window.parent.frames[0].document.map, 0, document.materialForm);">
+<!-- Include functions that are common for the interactive forms -->
+<SCRIPT language="JavaScript" src="checker.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="common.js"> </SCRIPT>
+<SCRIPT language="JavaScript" src="commonForInteractiveForms.js"> </SCRIPT>
+<!-- End Include -->
+
+<SCRIPT language="JavaScript">
+<!--
+   okCancelForm ('return validateMaterial(\'Atomic Volume\', \'Grain Size\')', 'confirmCancel (window.parent.frames[0].document.materialSelectBox.material[0])');
+// -->
+</SCRIPT>
+
+   <FORM name="materialForm">
+      <TABLE width="95%">
+       <TBODY width="100%">
+        <TR>
+          <TD colSpan="3">
+            <FONT size="+1">Crystallographic and Thermal Data</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD width="4%" rowSpan="3">&nbsp;</TD>
+          <TD width="30%"><B>Atomic Volume, (m<SUP>3</SUP>)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Atomic Volume"></TD>
+        </TR>
+        <TR>
+          <TD><B>Burgers Vector, (m)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Bergers Vector"></TD>
+        </TR>
+        <TR>
+          <TD><B>Melting Temperature, (K)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Melting Temperature"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+           <FONT size="+1">Modulus</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="2">&nbsp;</TD>
+          <TD> <B>Shear Modulus at 300K, (MN/m<SUP>2</SUP>)</B> </TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Modulus"></TD>
+        </TR>
+        <TR>
+          <TD><B>Temperature Dependence of Modulus,</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Temperature Dependence of Modulus"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+            <FONT size="+1">Lattice Diffusion</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="2">&nbsp;</TD>
+          <TD><B>Pre-Exponential, (m<SUP>2</SUP>/s)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Pre-Exponential of Lattice Diffusion"></TD>
+        </TR>
+        <TR>
+          <TD><B>Activation Energy, (kJ/mole)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Activation Energy of Lattice Diffusion"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+            <FONT size="+1">Boundary Diffusion</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="2">&nbsp;</TD>
+          <TD><B>Pre-Exponential, (m<SUP>3</SUP>/s)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Pre-Exponential of Boundary Diffusion"></TD>
+        </TR>
+        <TR>
+          <TD><B>Activation Energy, (kJ/mole)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Activiation Energy of Boundary Diffusion"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+             <FONT size="+1">Core Diffusion</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="2">&nbsp;</TD>
+          <TD><B>Pre-Exponential, (m<SUP>4</SUP>/s)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Pre-Exponential of Core Diffusion"></TD>
+        </TR>
+        <TR>
+          <TD><B>Activation Energy, (kJ/mole)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Activation Energy of Core Diffusion"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+           <FONT size="+1">Power-Law Creep</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="3">&nbsp;</TD>
+          <TD><B>Exponent, n</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Exponent of Power-Law Creep"></TD>
+        </TR>
+        <TR>
+          <TD><B>Dorn Constant, A</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Dorn Constant"></TD>
+        </TR>
+        <TR>
+          <TD><B>P-L Breakdown</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="P-L Breakdown"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+           <FONT size="+1">Obstacle-Controlled Glide</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="3">&nbsp;</TD>
+          <TD><B>0 K Flow Stress</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Flow Stress"></TD>
+        </TR>
+        <TR>
+          <TD><B>Pre-Exponentialy, (s<SUP>-1</SUP>)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Pre-Exponential of Obstacle-Controlled Glide"></TD>
+        </TR>
+        <TR>
+          <TD><B>Activation Energy</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Activation Energy of Obstacle-Controlled Glide"></TD>
+        </TR>
+        <TR>
+	    <TD colSpan="3">
+           <HR width="100%" SIZE="1">
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan="3">
+            <FONT size="+1">Other Variables</FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD rowSpan="1">&nbsp;</TD>
+          <TD><B>Grain Size, (m)</B></TD>
+          <TD><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Grain Size"></TD>
+        </TR>
+       </TBODY>
+      </TABLE>
+   </FORM>
+
+<SCRIPT language="JavaScript">
+<!--
+   okCancelForm ('return validateMaterial(\'Atomic Volume\', \'Grain Size\')', 'confirmCancel (window.parent.frames[0].document.materialSelectBox.material[0])');
+// -->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+
+function validateMaterialValues (thisForm, firstValIndex, lastValIndex) {
+    // Make sure that entries are all numbers, empty is okay
+    for (var i=firstValIndex; i<=lastValIndex; i++) {
+	   if ((thisForm[i].value!="") && (!noLetters(thisForm[i].value))) {
+               alert ("Invalid " + thisForm[i].name + " - not a number.");
+               if (thisForm[i].focus) {
+                   thisForm[i].focus();
+               }
+               return false;
+          }
+    }
+
+    // Now, interval checking with intervals given to me by Prof Frost
+    if (!validator (thisForm, firstValIndex, '[', '1E-30', '1E-27', ']')) return false;
+    if (!validator (thisForm, firstValIndex+1, '[', '1E-11', '1E-9', ']')) return false;
+    if (!validator (thisForm, firstValIndex+2, '[', '4', '5000', ']')) return false;
+    if (!validator (thisForm, firstValIndex+3, '[', '1E3', '1E6', ']')) return false;
+    if (!validator (thisForm, firstValIndex+4, '[', '-1', '0', ']')) return false;
+    if (!validator (thisForm, firstValIndex+5, '[', '0', infinity, ']')) return false;
+    if (!validator (thisForm, firstValIndex+6, '[', '10', '1000', ']')) return false;
+    if (!validator (thisForm, firstValIndex+7, '[', '0', infinity, ']')) return false;
+    if (!validator (thisForm, firstValIndex+8, '[', '10', '1000', ']')) return false;
+    if (!validator (thisForm, firstValIndex+9, '[', '0', infinity, ']')) return false;
+    if (!validator (thisForm, firstValIndex+10, '[', '10', '1000', ']')) return false;
+    if (!validator (thisForm, firstValIndex+11, '[', '0.5', '20', ']')) return false;
+    if (!validator (thisForm, firstValIndex+12, '[', '0', infinity, ']')) return false;
+    if (!validator (thisForm, firstValIndex+13, '[', '10', '1E5', ']')) return false;
+    if (!validator (thisForm, firstValIndex+14, '[', '1E-5', '0.1', ']')) return false;
+    if (!validator (thisForm, firstValIndex+15, '[', '1E-6', '1E12', ']')) return false;
+    if (!validator (thisForm, firstValIndex+16, '[', '0.01', '10', ']')) return false;
+    // Validation for Grain Size not implemented.
+   return true;
+
+}
+
+function validateMaterial(firstValue, lastValue)
+{
+    if (!changed) {
+       return true;
+    }
+
+    thisForm = document.materialForm;
+ // Validation
+    var firstValueIndex = eval(findNameInForm(thisForm, firstValue));
+    var lastValueIndex = eval(findNameInForm(thisForm, lastValue));
+    if (!validateMaterialValues(thisForm, firstValueIndex, lastValueIndex)) {
+       return false;
+    }
+ // Save changes
+    var cookName = setCookieName (window.parent.frames[0].document.materialSelectBox.elements[1], window.parent.frames[0].getStandardMaterials(), "material");
+    setCookie ('material', thisForm, cookName, firstValueIndex, lastValueIndex);
+    var valuesAsArr = formToArray (thisForm, firstValueIndex, lastValueIndex, cookName);
+    window.parent.frames[0].changeCustomMaterial (window.parent.frames[0].document.materialSelectBox.elements[1].selectedIndex-window.parent.frames[0].getStandardMaterials().length-2, valuesAsArr);
+    transferValues (thisForm, firstValueIndex, window.parent.frames[0].document.map, 0);
+  // Close the interactive area of the frame
+    location.href = "empty.html";
+}
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

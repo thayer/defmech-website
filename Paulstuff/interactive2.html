@@ -1,0 +1,351 @@
+<html>
+<title>Create your own Map</title>
+<body bgcolor = "gray" link = "blue" alink = "red" vlink = "red">
+
+
+<SCRIPT LANGUAGE = "JavaScript">
+<!--
+
+
+function setCookie (name) {
+       document.cookie = name + "=" + document.newMap.atvol.value + "|" + document.newMap.burgvec.value + "|" +  document.newMap.meltemp.value + "|" + document.newMap.shemod.value + "|" + document.newMap.tempdep.value + "|" + document.newMap.preexv.value + "|" + document.newMap.actenv.value + "|" + document.newMap.preexb.value + "|" + document.newMap.actenb.value + "|" + document.newMap.preexc.value + "|" + document.newMap.actenc.value + "|" + document.newMap.expn.value + "|" + document.newMap.dorna.value + "|" + document.newMap.pl.value + "|" + document.newMap.flowstr.value + "|" + document.newMap.preexg.value + "|" + document.newMap.actenf.value + "|" + document.newMap.grain.value + "|" + document.newMap.MaterialName.value + "; expires = expires=Mon, 01-Jan-2015 00:00:00 GMT; path=/;";
+}
+
+// Initial portion of getCookie function taken from http://www.cookiecentral.com/faq/#5.2
+function getCookie(name) {
+         var cookie = " " + document.cookie;
+         var search = " " + name + "=";
+         var setStr = null;
+         var offset = 0;
+         var end = 0;
+         if (cookie.length > 0) {
+                 offset = cookie.indexOf(search);
+                 if (offset != -1) {
+                         offset += search.length;
+                         end = cookie.indexOf(";", offset)
+                         if (end == -1) {
+                                 end = cookie.length;
+                         }
+                         setStr = unescape(cookie.substring(offset, end));
+                 }
+         }
+
+  // Now put the values from setStr into newMap's boxes.
+    if (setStr == null) alert ("No such metal file.")
+    else {
+          var element = setStr.split("|");
+	  if (element.length != 19) alert ("Not a properly saved metal file.");
+          else { 
+	     document.newMap.atvol.value = element[0];
+	     document.newMap.burgvec.value = element[1];
+	     document.newMap.meltemp.value = element[2];
+	     document.newMap.shemod.value = element[3];
+	     document.newMap.tempdep.value = element[4];
+             document.newMap.preexv.value = element[5];
+             document.newMap.actenv.value = element[6];
+             document.newMap.preexb.value = element[7];
+             document.newMap.actenb.value = element[8];
+             document.newMap.preexc.value = element[9];
+             document.newMap.actenc.value = element[10];
+             document.newMap.expn.value = element[11];
+             document.newMap.dorna.value = element[12];
+             document.newMap.pl.value = element[13];
+             document.newMap.flowstr.value = element[14];
+             document.newMap.preexg.value = element[15];
+             document.newMap.actenf.value = element[16];
+             document.newMap.grain.value = element[17];
+          }
+    }
+}
+
+
+function changeMetal(myform, cookie)
+{
+    var element = new Array();
+
+    if (myform.selectedIndex == "0") {
+	element[0]=""; element[1]=""; element[2]=""; element[3]=""; element[4]=""; element[5]=""; element[6]=""; 
+                       element[7]=""; element[8]=""; element[9]=""; element[10]=""; element[11]=""; element[12]=""; 
+		       element[13]=""; element[14]=""; element[15]=""; element[16]=""; element[17] = ""; element[18] = "";
+	}
+	else if (myform.selectedIndex == "1"){
+	
+	}
+	else if (myform.selectedIndex == "2"){
+	element[0]="3.03E-29"; element[1]="3.49E-10"; element[2]="601"; element[3]="0.73E4"; element[4]="-0.76"; element[5]="1.4E-4"; element[6]="109"; 
+                          element[7]="8.0E-14"; element[8]="66"; element[9]="1.0E-22"; element[10]="66"; element[11]="5.0"; element[12]="2.5E8"; 
+			  element[13]="0"; element[14]="8.7E-3"; element[15]="1.0E6"; element[16]="0.5"; element[17] = ""; element[18] = "Lead";}
+	else if (myform.selectedIndex == "3"){
+	element[0]="1.71E-29"; element[1]="2.86E-10"; element[2]="1234"; element[3]="2.64E4"; element[4]="-0.54"; element[5]="4.4E-5"; element[6]="185"; element[17] = "";
+                          element[7]="4.5E-15"; element[8]="90"; element[9]="2.8E-25"; element[10]="82"; element[11]="4.3"; element[12]="3.2E2"; 
+			  element[13]="0"; element[14]="7.2E-3"; element[15]="1.0E6"; element[16]="0.5"; element[17] = ""; element[18] = "Silver";
+	}
+	else if (myform.selectedIndex > "3") {
+	     var fields = (cookie[myform.selectedIndex-3].substring(cookie[myform.selectedIndex-3].indexOf("=")+1, cookie[myform.selectedIndex-3].length)).split("|");
+             if (fields.length != 19) alert ("Not a properly saved metal file.");
+             else element = fields;
+	     }
+
+
+    document.newMap.atvol.value = element[0];
+    document.newMap.burgvec.value = element[1];
+    document.newMap.meltemp.value = element[2];
+    document.newMap.shemod.value = element[3];
+    document.newMap.tempdep.value = element[4];
+    document.newMap.preexv.value = element[5];
+    document.newMap.actenv.value = element[6];
+    document.newMap.preexb.value = element[7];
+    document.newMap.actenb.value = element[8];
+    document.newMap.preexc.value = element[9];
+    document.newMap.actenc.value = element[10];
+    document.newMap.expn.value = element[11];
+    document.newMap.dorna.value = element[12];
+    document.newMap.pl.value = element[13];
+    document.newMap.flowstr.value = element[14];
+    document.newMap.preexg.value = element[15];
+    document.newMap.actenf.value = element[16];
+    document.newMap.grain.value = element[17];
+    document.newMap.MaterialName.value = element[18];
+    }
+// -->
+</script>
+
+<center>
+
+<!-Title. Same as first page->
+
+<table bgcolor="fffb0" cellpadding="3" cellspacing="0" border="1" bordercolor="black" width="100%">
+    
+    <tr align ="center"><td width = "100%"><font size = "80" color="Black">DEFORMATION-MECHANISM</font></td></tr>
+    <tr align ="center"><td width = "100%"><font size = "80" color="Black">MAPS</font></td></tr>
+    <tr align ="center"><td width = "100%"><font size = "5" color="Black">The Plasticity and Creep of Metals and Ceramics</font></td></tr>
+</table>
+
+<!-Main table. Has yellow background and bothe the links to other pages and the Symbol table->
+
+<table bgcolor = "ffff3" cellpadding = "0" cellspacing = "0" border = "1" width = "100%">
+<tr align = "center">
+<td>
+<br>
+
+<!-Links to other pages table->
+
+<table bgcolor="ffff3" cellpadding = "2" cellspacing = "0" border = "2" width ="80%">
+	    <tr align = "center">
+	    <td width = "25%"><a href="index.html"><strong>Home</strong></a></td>
+	    <td width = "25%"><strong>Text</strong></td>
+	    <td width = "25%"><a href="symbolRef.html"><strong>Symbol Reference</strong></a></td>
+	    <td width = "25%"><a href="interactive.html"><strong>Interactive Plots</strong></a></td>
+	    </tr>
+</table>
+<br>
+
+
+<form name = "selectMetal">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "middle"><td align = "middle" width = "49%"><font size = "+1">Enter Data to Create a Map</font>
+                                                      <NOSCRIPT><br><font>Enable JavaScript for more options</font></NOSCRIPT></td>
+
+<SCRIPT language = "JavaScript">
+<!--
+    document.write("<td align = middle width = 2%><font size = +1>or</font></td>");
+    document.write("<td align = middle width = 49%><font size = +1>Pick From Pre-Entered Data <br> </font>");
+// -->
+</SCRIPT>
+
+<SCRIPT language = "JavaScript">
+<!--
+          var user_materials = (document.cookie).split("; "); 
+
+    document.write("<select onChange = \"changeMetal(this, user_materials)\" name = \"elements\">");
+                      document.write("<option>Clear Form");
+                      document.write("<option value>Nickel");
+                      document.write("<option>Lead");
+		      document.write("<option>Silver"); 
+         
+      // Now put in user-defined materials
+	  for (var i=1; i<user_materials.length; i=i+1) {
+	      document.write ("<option>" + user_materials[i].substring(0, user_materials[i].indexOf("=")));
+
+	  }
+     document.write("</select>");
+           
+
+// -->
+</SCRIPT>
+</table>
+
+</form>
+<form name = "newMap" method = "get" action="cgi/temp_p.cgi">
+<hr size = "1" width = "95%">
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3> <font size = "+4"> Material Name &nbsp; &nbsp; &nbsp; &nbsp; </font> <td width = "28%" align = right> <input name = MaterialName type="text" value = ""> </th>
+</tr> </td>
+
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><td align = "left" width = "62%"><font size = "+1">Crystallographic and Thermal Data</font></td></th>
+<td width = "38%" align = middle>
+
+
+
+
+<META form name = "newMap" method = "get" action="cgi/defMechInput.cgi">
+
+
+
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Atomic Volume, (m<sup>3</sup>)</b></td>
+    <td width = "28%"><input type = "text" name = "atvol" size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Burgers Vector, (m)</b></td>
+    <td width = "28%"><input type = "text"  name = "burgvec" size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Melting Temperature, (K)</b></td>
+    <td width = "28%"><input name = meltemp  size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Modulus</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Shear Modulus at 300K, (MN/m<sup>2</sup>)</b></td>
+    <td><input name = shemod  size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Temperature Dependence of Modulus,</b></td>
+    <td><input name = tempdep  size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Lattice Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>2</sup>/s)</b></td>
+    <td><input name = preexv  size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenv  size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Boundary Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>3</sup>/s)</b></td>
+    <td><input name = preexb size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenb size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Core Diffusion</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (m<sup>4</sup>/s)</b></td>
+    <td><input name = preexc size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy, (kJ/mole)</b></td>
+    <td><input name = actenc  size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Power-Law Creep</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Exponent, n</b></td>
+    <td><input name = expn size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Dorn Constant, A</b></td>
+    <td><input name = dorna size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>P-L Breakdown</b></td>
+    <td><input name = pl  size = "20"></td>
+</tr>
+</table>
+
+<hr size = "1" width = "95%">
+
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Obstacle-Controlled Glide</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>0 K Flow Stress</b></td>
+    <td><input name = flowstr  size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Pre-Exponential, (s<sup>-1</sup>)</b></td>
+    <td><input name = preexg size = "20"></td>
+</tr>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Activation Energy</b></td>
+    <td><input name = actenf size = "20"></td>
+</tr>
+</table>
+<br>
+
+<hr size = "1" width = "95%">
+<table border = "0" bgcolor = "ffff3" width = "95%">
+<tr align = "left"><th colspan = 3><font size = "+1">Other Variables</font></th>
+<tr>
+    <td width = "4%"></td>
+    <td width = "30%"><b>Grain Size</b></td>
+    <td><input name = grain size = "20"></td>
+</tr>
+</table>
+<br>
+
+
+<br>
+
+<input type="submit" value ="Create Map" onClick=setCookie(document.newMap.MaterialName.value) align = "middle">
+
+</form>
+</td></tr>
+</table>
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,177 @@
+infinity = '10E9999999999999999999999';
+
+function noLetters(entry) {
+// Checks to make sure that entry has no letters, other than one 'E' and properly placed '-' and '.'
+   // alert ('entry.length: ' + entry.length);
+   var splitentry = entry.split ("E");
+   // alert ('splitentry on E: ' + splitentry);
+   if (splitentry.length==1)  {   // entry has no E's.
+       if (entry.charAt(0)=='-')   // ignore a leading '-'
+           entry = entry.substring(1,entry.length);
+       splitentry = entry.split (".");
+       if (splitentry.length==1) {   // entry has no decimal point, check for only numbers.
+          if (entry.length==0)   // catch blank entries
+              return false;
+          nolets = true;
+          for (var i=0; i<entry.length; i=i+1) {
+             nolets = (nolets && entry.charAt(i)<='9' && entry.charAt(i)>='0');
+             // if (!nolets) alert (i);
+          }
+          return nolets;
+       }
+       else if (splitentry.length==2) return (noLetters("0"+splitentry[0]) && noLetters("-" + splitentry[1]));  
+          // add the minus to ensure that the point beyond the decimal point contains no minus sign.
+       else return false;  // entry contains more than one decimal point, it's invalid. 
+   }
+
+   else if (splitentry.length==2) return (noLetters(splitentry[0]) && noLetters(splitentry[1]+".0"));  
+     // check both parts of entry, before and after the 'E'. Add the .0 to ensure that the part after the E as no decimal.
+
+   else return false;  // entry contains more than one E, it's invalid.
+
+}
+
+function comp(a, b, pad) {
+  // Receives data with no Es and no decimal point, returns comparison
+   if (pad) {
+      while (a.length < b.length) a+="0";
+      while (b.length < a.length) b+="0";
+   }
+   var numA = eval(a);
+   var numB = eval(b);
+   if (a=="") numA=0;
+   if (b=="") numB=0;
+   if (numA==numB) return '='
+   else if (numA<numB) return '<'
+   else if (numA>numB) return '>';
+}
+
+function interval(entry, lparen, min, max, rparen) {
+// Assume: entry has one or zeros E's. lparen is either '(' or '['. rparen is either ')' or ']'. Min and max are valid numbers.
+// Return: True if entry is within the interval specified, false otherwise.
+
+   // add E1 if no E exists.
+   if (entry.indexOf("E")== -1) {
+      entry = entry + "E0";
+   }
+   if (min.indexOf("E")== -1)
+      min = min + "E0";
+   if (max.indexOf("E")== -1) {
+      max = max + "E0";
+   }
+
+   // remove leading zeroes of positive numbers
+   while ((entry!="") && (entry.charAt(0)=='0')) entry = entry.substring(1,entry.length);
+   while ((min!="") && (min.charAt(0)=='0')) min = min.substring(1,min.length);
+   while ((max!="") && (max.charAt(0)=='0')) max = max.substring(1,max.length);
+
+   // remove leading zeroes of negative numbers
+   while (entry.indexOf('-0')==0) entry = '-'+entry.substring(2,entry.length);
+   while (min.indexOf('-0')==0) min = '-'+min.substring(2,min.length);
+   while (max.indexOf('-0')==0) max = '-'+max.substring(2,max.length);
+
+
+   // convert negative zero and Ex to zero
+   if ((entry=="-") || (entry.charAt(0)=='E'))
+       entry = "";
+   if ((min=="-") || (min.charAt(0)=='E'))
+       min = "";
+   if ((max=="-") || (max.charAt(0)=='E'))
+       max = "";
+
+   if (entry=="") {
+       return ((( min.charAt(0)=='-') || ((lparen=='[') && (min==""))) &&
+              (( max.charAt(0)!='-') || ((rparen==']') && (max==""))));
+   }
+
+   // split into part before E and part after E.
+   var splitEntry = entry.split ("E");   // assume it splits into 2.
+   var splitMin = min.split ("E");    // assume it splits into 2.
+   var splitMax = max.split ("E");    // assume it splits into 2.
+
+ // remove leading zeroes after decimal. For example, ".009E0" becomes ".9E-2"
+  // positives
+   while (splitEntry[0].indexOf(".0")==0) {
+     splitEntry[0] = '.' + splitEntry[0].substring(2,splitEntry[0].length);
+     splitEntry[1] = eval(splitEntry[1])-1;
+   }
+   while (splitMin[0].indexOf(".0")==0) {
+     splitMin[0] = '.' + splitMin[0].substring(2,splitMin[0].length);
+     splitMin[1] = eval(splitMin[1])-1;
+   }
+   while (splitMax[0].indexOf(".0")==0) {
+     splitMax[0] = '.' + splitMax[0].substring(2,splitMax[0].length);
+     splitMax[1] = eval(splitMax[1])-1;
+   }
+  // negatives
+   while (splitEntry[0].indexOf("-.0")==0) {
+     splitEntry[0] = '-.' + splitEntry[0].substring(3,splitEntry[0].length);
+     splitEntry[1] = eval(splitEntry[1])-1;
+   }
+   while (splitMin[0].indexOf("-.0")==0) {
+     splitMin[0] = '-.' + splitMin[0].substring(3,splitMin[0].length);
+     splitMin[1] = eval(splitMin[1])-1;
+   }
+   while (splitMax[0].indexOf("-.0")==0) {
+     splitMax[0] = '-.' + splitMax[0].substring(3,splitMax[0].length);
+     splitMax[1] = eval(splitMax[1])-1;
+   }
+
+
+   // exceptions where it wouldn't have split into 2 -- zero cases
+   if (min=="") {
+       splitMin[0] = ".0";
+       splitMin[1] = splitEntry[1];
+   }
+   if (max=="") {
+       splitMax[0] = ".0";
+       splitMax[1] = splitEntry[1];
+   }
+
+
+
+   // move decimal point to beginning. For example, "10E6" becomes ".10E8"
+  var decLocation = splitEntry[0].indexOf('.');
+   if (decLocation==-1) decLocation = splitEntry[0].length;
+   splitEntry[1] = eval(splitEntry[1]) + decLocation;
+   var decSplit = splitEntry[0].split('.');
+   if (decSplit.length==2)
+       splitEntry[0] = decSplit[0]+decSplit[1];
+   while ((splitEntry[0]!='') && (splitEntry[0].charAt(splitEntry[0].length-1)=='0'))  splitEntry[0] = splitEntry[0].substring(0,splitEntry[0].length-1);  // drop trailing zeroes (all digits are now after the decimal point)
+  var decLocation = splitMin[0].indexOf('.');
+   if (decLocation==-1) decLocation = splitMin[0].length;
+   splitMin[1] = eval(splitMin[1]) + decLocation;
+   var decSplit = splitMin[0].split('.');
+   if (decSplit.length==2)
+       splitMin[0] = decSplit[0]+decSplit[1];
+   while ((splitMin[0]!='') && (splitMin[0].charAt(splitMin[0].length-1)=='0'))  splitMin[0] = splitMin[0].substring(0,splitMin[0].length-1);  // drop trailing zeroes (all digits are now after the decimal point)
+  var decLocation = splitMax[0].indexOf('.');
+   if (decLocation==-1) decLocation = splitMax[0].length;
+   splitMax[1] = eval(splitMax[1]) + decLocation;
+   var decSplit = splitMax[0].split('.');
+   if (decSplit.length==2)
+       splitMax[0] = decSplit[0]+decSplit[1];
+   while ((splitMax[0]!='') && (splitMax[0].charAt(splitMax[0].length-1)=='0'))  splitMax[0] = splitMax[0].substring(0,splitMax[0].length-1);  // drop trailing zeroes (all digits are now after the decimal point)
+
+  // Carry negativities over to [1] portions of the numbers
+    if (splitEntry[0].charAt(0)=='-')   splitEntry[1] = '-' + splitEntry[1];
+    if (splitMin[0].charAt(0)=='-')   splitMin[1] = '-' + splitMin[1];
+    if (splitMax[0].charAt(0)=='-')   splitMax[1] = '-' + splitMax[1];
+
+   var begMinGood = (comp (splitMin[0],splitEntry[0])=='<',1) || ((comp (splitMin[0],splitEntry[0],1)=='=') && (lparen=='['));
+   var minGood = (comp (splitMin[1],splitEntry[1],0)=='<') || ((comp (splitMin[1],splitEntry[1],0)=='=') && begMinGood);
+   var begMaxGood = (comp (splitMax[0],splitEntry[0],1)=='>') || ((comp (splitMax[0],splitEntry[0],1)=='=') && (rparen==']'));
+   var maxGood = (comp (splitMax[1],splitEntry[1],0)=='>') || ((comp (splitMax[1],splitEntry[1],0)=='=') && begMaxGood);
+   // alert ("minGood: " + comp (splitMin[0],splitEntry[0]) + " of " + splitMin[0] + " and " + splitEntry[0]);
+   // alert ("What's good: " + begMinGood + " " + begMaxGood + " " + minGood + " " + maxGood);
+
+   return (minGood && maxGood);
+}
+
+
+
+
+
+
+
+

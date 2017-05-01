@@ -1,0 +1,109 @@
+<HTML>
+<BODY bgColor="white" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" onLoad="transferValues (window.parent.frames[0].document.map, window.parent.frames[0].numMaterialElements, document.displayForm);">
+<!-- Include functions that are common for the interactive forms -->
+<SCRIPT language="JavaScript" src="checker.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="common.js"> </SCRIPT>
+<SCRIPT language="JavaScript" src="commonForInteractiveForms.js"> </SCRIPT>
+<!-- End Include -->
+
+<SCRIPT language="JavaScript">
+<!--
+   okCancelForm ('return validateDisplay(\'X Axis - Min\', \'Number of Contours\')', 'confirmCancel (window.parent.frames[0].document.displaySelectBox.display[0])');
+// -->
+</SCRIPT>
+
+   <FORM name="displayForm">
+      <TABLE width="95%">
+       <TBODY width="100%">
+        <TR>
+          <TD width="4%">&nbsp;</TD>
+          <TD width="30%">&nbsp;</TD>
+          <TD align="center"><B>Minn</B></TD>
+          <TD align="center"><B>Max</B></TD>
+        </TR>
+        <TR>
+          <TD width="4%">&nbsp;</TD>
+          <TD width="30%"><B>X Axis (T/Tm)</B></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="X Axis - Min"></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="X Axis - Max"></TD>
+        </TR>
+        <TR>
+          <TD width="4%">&nbsp;</TD>
+          <TD width="30%"><B>Y Axis</B></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Y Axis - Min"></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Y Axis - Max"></TD>
+        </TR>
+        <TR>
+          <TD width="4%">&nbsp;</TD>
+          <TD width="30%"><B>Contours</B></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Contours - Min"></TD>
+          <TD align="center"><INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Contours - Max"></TD>
+          <TD align="center">Number of Contours:&nbsp;<INPUT type="text" size="20" maxsize="50" onchange="changed=true;" name="Number of Contours"></TD>
+        </TR>
+       </TBODY>
+      </TABLE>
+   </FORM>
+
+<SCRIPT language="JavaScript">
+<!--
+   okCancelForm ('return validateDisplay(\'X Axis - Min\', \'Number of Contours\')', 'confirmCancel (window.parent.frames[0].document.displaySelectBox.display[0])');
+// -->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+
+
+function validateDisplayValues (thisForm, firstValIndex, lastValIndex) {
+    // Make sure that entries are all numbers, empty is not okay
+    for (var i=firstValIndex; i<=lastValIndex; i++) {
+	   if (!noLetters(thisForm[i].value)) {
+               alert ("Invalid " + thisForm[i].name + " - not a number.");
+               if (thisForm[i].focus) {
+                   thisForm[i].focus();
+               }
+               return false;
+          }
+    }
+
+    // Now, interval checking with intervals given to me by Prof Frost
+    if (!validator (thisForm, firstValIndex, '[', '0', '1', ']')) return false;
+    if (!validator (thisForm, firstValIndex+1, '(', ""+thisForm.elements[firstValIndex].value, '1', ']')) return false;
+    if (!validator (thisForm, firstValIndex+2, '(', '0', '1', ']')) return false;
+    if (!validator (thisForm, firstValIndex+3, '[', thisForm.elements[firstValIndex+2].value, '1', ']')) return false;
+    if (!validator (thisForm, firstValIndex+4, '[', '10E-20', '10E10', ']')) return false;
+    if (!validator (thisForm, firstValIndex+5, '[', thisForm.elements[firstValIndex+4].value, '10E10', ']')) return false;
+    if (!validator (thisForm, firstValIndex+6, '[', '0', '400', ']')) return false;
+    return true;
+
+}
+
+function validateDisplay(firstValue, lastValue)
+{
+    if (!changed) {
+       return true;
+    }
+
+    thisForm = document.displayForm;
+ // Validation
+    var firstValueIndex = eval(findNameInForm(thisForm, firstValue));
+    var lastValueIndex = eval(findNameInForm(thisForm, lastValue));
+    if (!validateDisplayValues(thisForm, firstValueIndex, lastValueIndex)) {
+       return false;
+    }
+ // Save changes
+    var cookName = setCookieName (window.parent.frames[0].document.displaySelectBox.elements[1], window.parent.frames[0].getStandardDisplay(), "display option");
+    setCookie ('display', thisForm, cookName, firstValueIndex, lastValueIndex);
+    var valuesAsArr = formToArray (thisForm, firstValueIndex, lastValueIndex, cookName);
+    window.parent.frames[0].changeCustomDisplay (window.parent.frames[0].document.displaySelectBox.elements[1].selectedIndex-window.parent.frames[0].getStandardDisplay().length-2, valuesAsArr);
+    transferValues (thisForm, firstValueIndex, window.parent.frames[0].document.map, window.parent.frames[0].numMaterialElements);
+  // Close the interactive area of the frame
+    location.href = "empty.html";
+}
+
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

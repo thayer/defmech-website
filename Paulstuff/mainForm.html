@@ -1,0 +1,50 @@
+<HTML>
+<BODY bgColor="white" leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+  <NOSCRIPT>Your browser is not JavaScript enabled. This page requires Javascript. Please <A href="index.html">go back</A>.</NOSCRIPT>
+<!-- Standard Top -->
+  <SCRIPT language="JavaScript" src="stdTop.js"> </SCRIPT>
+<!-- End Standard Top -->
+
+
+<!-- Test for cookies activated -->
+<SCRIPT language="JavaScript">
+<!--
+  // Test if cookies are activated
+  document.cookie = "defmechTestForCookieFunctionality";
+  if (document.cookie.indexOf("defmechTestForCookieFunctionality")==-1) {
+     alert ("You do not have cookies activated. You may continue, but if you use customized options, you will not be able to save them.");
+  }
+// -->
+</SCRIPT>
+<!-- End Test for cookies activated -->
+
+<!-- Includes -->
+<SCRIPT language="JavaScript" src="stdmaterials.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="commonForSelectBoxes.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="interactiveMaterialSelectBox.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="interactiveDisplaySelectBox.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="interactiveEquationSelectBox.js"></SCRIPT>
+
+<!-- End Includes -->
+
+<!-- This is the main form, containing all of the inputs to the perl and C++ programs -->
+<!-- All fields are hidden and imported either through standard or custom stored values, or through interactive forms that -->
+<!-- are shown in the other frame. -->
+<FORM name="map" action="cgi/defMechInput.cgi" method="get">
+   <SCRIPT language="JavaScript">
+   <!--
+       writeHiddenInputs(numMaterialElements);
+       writeHiddenInputs(numDisplayElements);
+       writeHiddenInputs(numEquationElements);
+   // -->
+   </SCRIPT>
+</FORM>
+<!-- End map form -->
+
+<SCRIPT language="JavaScript" src="validateMaterial.js"></SCRIPT>
+<!-- Standard Bottom -->
+<SCRIPT language="JavaScript" src="stdBottom.js"></SCRIPT>
+<!-- End Standard Bottom -->
+
+</BODY>
+</HTML>
