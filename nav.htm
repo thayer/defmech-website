@@ -6,7 +6,7 @@ var currentHighlightBar; //this holds the object of the current highlighted nav 
 
 // swap navbars for onMouseOver and onMouseOut events.
 function swapImage(image, newsrc)
-{	
+{
 	src = image.src;
 	chkpt = src.length-5;
 	if(src.charAt(chkpt)=="3") //if the nav bar is currently highlighted, do nothing.
@@ -28,12 +28,12 @@ function highlightNavBar(image, newsrc)
 	}
 	else
 		currentsrc=currentHighlightBar.src;
-		
+
 	currentsrclength=currentsrc.length;
-	
+
 	//switch the old highlighted nav bar image back to the unhighlighted one.
-	currentHighlightBar.src=currentsrc.substring(0,currentsrclength-5) + "1.gif"; 
-	
+	currentHighlightBar.src=currentsrc.substring(0,currentsrclength-5) + "1.gif";
+
 	currentHighlightBar=image;
 }
 
@@ -44,7 +44,7 @@ function highlightNavBar(image, newsrc)
 <meta http-equiv="Content-Language" content="en-us">
 <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Type" content="text/html">
 <title>Home</title>
 <base target="main">
 </head>
